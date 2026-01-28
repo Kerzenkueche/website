@@ -12,11 +12,6 @@
     <meta property="og:description" content="Handgegossene Kerzen aus Bienenwachs, Rapswachs & Paraffin. Für besondere Anlässe und jeden Tag.">
     <meta property="og:image" content="og-image.jpg">
     <meta property="og:url" content="https://kerzenkueche.de">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="favicon.svg">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,15 +27,13 @@
                         'toffee-light': '#C9A88A',
                         'copper-sand': '#D4A574',
                         'sage': '#9CAF88',
-                        'sage-muted': '#B5C4A8',
                         'charcoal': '#3D3D3D',
-                        'charcoal-light': '#5A5A5A',
                         'honey': '#E8B857',
                         'blush': '#E8C4C4',
                     },
                     fontFamily: {
-                        'display': ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
-                        'body': ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        'display': ['Georgia', 'serif'],
+                        'body': ['system-ui', 'sans-serif'],
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -63,800 +56,142 @@
     
     <style>
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #FAF7F2; 
-        }
-        
-        .font-display { font-family: Georgia, Cambria, 'Times New Roman', Times, serif; }
-        
-        /* SHOP-ELEMENTE */
-        .shop-hidden .shop-element { display: none !important; }
-        body:not(.shop-hidden) .shop-element { display: flex; }
-        
-        /* GLASSMORPHISM */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        }
-        .glass-card-warm {
-            background: rgba(166, 123, 91, 0.08);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(166, 123, 91, 0.15);
-            box-shadow: 0 4px 30px rgba(166, 123, 91, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-        }
-        .glass-card-sage {
-            background: rgba(156, 175, 136, 0.12);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(156, 175, 136, 0.2);
-        }
-        .glass-card-honey {
-            background: rgba(232, 184, 87, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(232, 184, 87, 0.2);
-        }
-        .glass-card-blush {
-            background: rgba(232, 196, 196, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(232, 196, 196, 0.25);
-        }
-        
-        .hero-overlay {
-            background: linear-gradient(to bottom, rgba(250, 247, 242, 0.3) 0%, rgba(250, 247, 242, 0.6) 40%, rgba(250, 247, 242, 0.95) 100%);
-        }
-        
-        /* ANIMATIONS */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        .font-display { font-family: Georgia, serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-            html { scroll-behavior: auto; }
-            .animate-float { animation: none; }
-        }
-        
-        .img-zoom { overflow: hidden; }
-        .img-zoom img, .img-zoom .img-placeholder { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        .img-zoom:hover img, .img-zoom:hover .img-placeholder { transform: scale(1.05); }
-        
-        .whatsapp-btn { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-        .whatsapp-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35); }
-        
-        .seasonal-badge { background: linear-gradient(135deg, #A67B5B 0%, #C9A88A 100%); }
-        .icon-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .icon-card:hover { transform: translateY(-4px); }
-        
-        .video-placeholder {
-            background: linear-gradient(135deg, #D4A574 0%, #A67B5B 25%, #8B6344 50%, #A67B5B 75%, #C9A88A 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-        }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-400 { transition-delay: 400ms; }
-        .delay-500 { transition-delay: 500ms; }
-        
-        .header-sticky { transition: all 0.3s ease; }
-        .header-sticky.scrolled {
-            background: rgba(250, 247, 242, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .occasion-tag { transition: all 0.3s ease; }
-        .occasion-tag:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(166, 123, 91, 0.2); }
-        
-        .cookie-banner { transform: translateY(100%); transition: transform 0.4s ease; }
-        .cookie-banner.visible { transform: translateY(0); }
-        
-        /* ACCORDION STYLES */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
-        .accordion-content.open {
-            max-height: 2000px;
-            transition: max-height 0.6s ease-in;
-        }
-        .accordion-btn svg {
-            transition: transform 0.3s ease;
-        }
-        .accordion-btn.open svg {
-            transform: rotate(180deg);
-        }
-        
-        /* Legal Content */
-        .legal-content h4 { margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: #C9A88A; }
-        .legal-content h4:first-child { margin-top: 0; }
-        .legal-content p { margin-bottom: 0.5rem; font-size: 0.875rem; }
-        .legal-content ul { margin-bottom: 0.5rem; padding-left: 1.25rem; list-style-type: disc; font-size: 0.875rem; }
-        .legal-content li { margin-bottom: 0.25rem; }
+        .glass-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(250, 247, 242, 0.3) 0%, rgba(250, 247, 242, 0.95) 100%); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .accordion-content.open { max-height: 2000px; }
+        .video-placeholder { background: linear-gradient(135deg, #D4A574 0%, #A67B5B 50%, #C9A88A 100%); background-size: 400% 400%; animation: grad 8s ease infinite; }
+        @keyframes grad { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
     </style>
 </head>
 
-<body class="bg-cream text-charcoal antialiased shop-hidden">
+<body class="bg-cream text-charcoal antialiased">
 
-    <!-- Skip Link -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-toffee text-white px-4 py-2 rounded-lg z-[100]">
-        Zum Hauptinhalt springen
-    </a>
-
-    <!-- STICKY HEADER -->
-    <nav class="header-sticky fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12 bg-cream/80 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-2 group">
-                <svg class="w-8 h-8 text-toffee transition-transform group-hover:scale-110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M32 8C32 8 24 18 24 26C24 30.4183 27.5817 34 32 34C36.4183 34 40 30.4183 40 26C40 18 32 8 32 8Z" fill="currentColor" opacity="0.8"/>
-                    <path d="M32 12C32 12 28 18 28 23C28 25.7614 29.7909 28 32 28C34.2091 28 36 25.7614 36 23C36 18 32 12 32 12Z" fill="#FAF7F2"/>
-                    <rect x="26" y="34" width="12" height="22" rx="2" fill="currentColor"/>
-                    <rect x="22" y="54" width="20" height="4" rx="1" fill="currentColor" opacity="0.6"/>
-                </svg>
-                <span class="font-display text-xl text-charcoal hidden sm:block">Kerzenküche</span>
+                <svg class="w-8 h-8 text-toffee" viewBox="0 0 64 64" fill="currentColor"><path d="M32 8C32 8 24 18 24 26C24 30.4183 27.5817 34 32 34C36.4183 34 40 30.4183 40 26C40 18 32 8 32 8Z" opacity="0.8"/><rect x="26" y="34" width="12" height="22" rx="2"/></svg>
+                <span class="font-display text-xl text-charcoal">Kerzenküche</span>
             </a>
-            
-            <div class="hidden md:flex items-center gap-8 text-sm">
-                <a href="#produkte" class="text-charcoal-light hover:text-toffee transition-colors">Produkte</a>
-                <a href="#anlaesse" class="text-charcoal-light hover:text-toffee transition-colors">Anlässe</a>
-                <a href="#ueber-uns" class="text-charcoal-light hover:text-toffee transition-colors">Über uns</a>
-                <a href="#kontakt" class="text-charcoal-light hover:text-toffee transition-colors">Kontakt</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#produkte" class="hover:text-toffee transition-colors">Produkte</a>
+                <a href="#anlaesse" class="hover:text-toffee transition-colors">Anlässe</a>
+                <a href="#ueber-uns" class="hover:text-toffee transition-colors">Über uns</a>
+                <a href="#kontakt" class="hover:text-toffee transition-colors">Kontakt</a>
             </div>
-            
-            <div class="flex items-center gap-4">
-                <button class="shop-element relative p-2 text-charcoal-light hover:text-toffee transition-colors" aria-label="Warenkorb öffnen">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                    </svg>
-                    <span class="absolute -top-1 -right-1 w-5 h-5 bg-toffee text-white text-xs rounded-full flex items-center justify-center">0</span>
-                </button>
-                
-                <button class="md:hidden p-2 text-charcoal-light hover:text-toffee transition-colors" aria-label="Menü öffnen">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
+            <a href="https://wa.me/491741941927" class="bg-toffee text-white px-5 py-2 rounded-full text-sm hover:bg-toffee-dark transition-all">Anfragen</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="w-full h-full video-placeholder"></div>
-        </div>
+    <!-- HERO -->
+    <header class="relative min-h-screen flex items-center justify-center text-center px-6">
+        <div class="absolute inset-0 z-0 video-placeholder"></div>
         <div class="absolute inset-0 hero-overlay z-10"></div>
-        
-        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
-            <div class="mb-8 reveal">
-                <svg class="w-16 h-16 mx-auto text-toffee animate-float" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M32 8C32 8 24 18 24 26C24 30.4183 27.5817 34 32 34C36.4183 34 40 30.4183 40 26C40 18 32 8 32 8Z" fill="currentColor" opacity="0.8"/>
-                    <path d="M32 12C32 12 28 18 28 23C28 25.7614 29.7909 28 32 28C34.2091 28 36 25.7614 36 23C36 18 32 12 32 12Z" fill="#FAF7F2"/>
-                    <rect x="26" y="34" width="12" height="22" rx="2" fill="currentColor"/>
-                    <rect x="22" y="54" width="20" height="4" rx="1" fill="currentColor" opacity="0.6"/>
-                </svg>
-            </div>
-            
-            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal mb-6 reveal delay-100">
-                Momente aus der<br>
-                <span class="text-toffee italic">Kerzenküche</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-charcoal-light max-w-2xl mx-auto mb-10 reveal delay-200">
-                Handgegossene Kerzen, Duftwachsmelts und einzigartige Deko-Objekte – 
-                mit Liebe gefertigt für besondere Anlässe und jeden Tag.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal delay-300">
-                <a href="#produkte" class="inline-flex items-center gap-3 bg-toffee hover:bg-toffee-dark text-white font-medium px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-toffee/30">
-                    <span>Sortiment entdecken</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 reveal delay-500">
-            <div class="w-6 h-10 border-2 border-toffee/40 rounded-full flex justify-center pt-2">
-                <div class="w-1.5 h-3 bg-toffee/60 rounded-full animate-bounce"></div>
-            </div>
+        <div class="relative z-20 max-w-4xl reveal">
+            <h1 class="font-display text-5xl md:text-7xl text-charcoal mb-6">Momente aus der <span class="text-toffee italic text-6xl md:text-8xl block mt-2">Kerzenküche</span></h1>
+            <p class="text-lg md:text-xl text-charcoal-light mb-10">Handgegossene Unikate für besondere Augenblicke.</p>
+            <a href="#produkte" class="inline-block bg-toffee text-white px-10 py-4 rounded-full font-medium hover:shadow-xl transition-all">Sortiment entdecken</a>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main id="main-content">
-        
-        <!-- PRODUKTE BENTO GRID -->
-        <section id="produkte" class="relative px-4 md:px-8 lg:px-12 py-16 md:py-24 max-w-7xl mx-auto">
-            
-            <div class="text-center mb-16 reveal">
-                <span class="text-sm uppercase tracking-[0.2em] text-toffee mb-4 block">Unser Sortiment</span>
-                <h2 class="font-display text-3xl md:text-5xl text-charcoal">Handgemacht mit Hingabe</h2>
+    <!-- PRODUKTE -->
+    <section id="produkte" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <span class="text-toffee tracking-widest uppercase text-sm">Handgefertigt</span>
+            <h2 class="font-display text-4xl md:text-5xl mt-2">Unsere Schätze</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-3xl reveal delay-100">
+                <h3 class="font-display text-2xl mb-4">Anlasskerzen</h3>
+                <p class="text-charcoal-light">Individuelle Designs für Taufe, Hochzeit und Kommunion.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(200px,auto)]">
-                
-                <!-- KACHEL 1: Philosophie -->
-                <article id="philosophie" class="md:col-span-2 lg:row-span-2 glass-card rounded-3xl p-8 md:p-10 flex flex-col justify-between reveal">
-                    <div>
-                        <span class="inline-block text-xs uppercase tracking-[0.15em] text-toffee bg-toffee/10 px-3 py-1 rounded-full mb-6">Unsere Philosophie</span>
-                        <h3 class="font-display text-2xl md:text-3xl lg:text-4xl text-charcoal mb-4 leading-tight">
-                            Jedes Stück ein<br>
-                            <span class="text-toffee italic">handgemachtes Unikat</span>
-                        </h3>
-                    </div>
-                    <div>
-                        <p class="text-charcoal-light leading-relaxed mb-6">
-                            In unserer Kerzenküche entstehen einzigartige Kreationen aus 100% Bienenwachs, 
-                            Rapswachs und Paraffin. Besonders am Herzen liegt uns die Nachhaltigkeit: 
-                            Viele unserer Kerzen gießen wir aus gesammelten Kerzenresten – so bekommt 
-                            jedes Wachsstück ein zweites Leben.
-                        </p>
-                        <p class="text-charcoal-light leading-relaxed">
-                            Ob für Taufe, Kommunion, Hochzeit oder einfach als Geschenk – jede Kerze 
-                            wird von Hand in verschiedenen Formen gegossen, mit Liebe zum Detail.
-                        </p>
-                    </div>
-                </article>
-                
-                <!-- KACHEL 2: Anlasskerzen -->
-                <article class="glass-card-blush rounded-3xl overflow-hidden img-zoom reveal delay-100">
-                    <div class="w-full h-full min-h-[280px] relative">
-                        <div class="img-placeholder absolute inset-0 bg-gradient-to-br from-blush/40 via-toffee-light/20 to-cream flex items-center justify-center">
-                            <div class="text-center p-6">
-                                <svg class="w-16 h-16 mx-auto text-toffee/50 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                </svg>
-                                <span class="font-display text-lg text-toffee/70 italic">Anlasskerzen</span>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-charcoal/70 to-transparent">
-                            <span class="text-xs text-white/80 uppercase tracking-wider">Für besondere Momente</span>
-                            <h4 class="font-display text-xl text-white">Anlasskerzen</h4>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- KACHEL 3: Duftwachsmelts -->
-                <article class="glass-card rounded-3xl overflow-hidden img-zoom reveal delay-200">
-                    <div class="w-full h-full min-h-[280px] relative">
-                        <div class="img-placeholder absolute inset-0 bg-gradient-to-br from-sage/30 via-sage-muted/20 to-cream flex items-center justify-center">
-                            <div class="text-center p-6">
-                                <svg class="w-16 h-16 mx-auto text-sage/60 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                                </svg>
-                                <span class="font-display text-lg text-sage/80 italic">Duftwachsmelts</span>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-charcoal/70 to-transparent">
-                            <span class="text-xs text-white/80 uppercase tracking-wider">Saisonale Düfte</span>
-                            <h4 class="font-display text-xl text-white">Duftwachsmelts</h4>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- KACHEL 4: Bienenwachs -->
-                <article class="glass-card-honey rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center text-center icon-card reveal delay-100">
-                    <div class="w-16 h-16 rounded-2xl bg-honey/20 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-honey" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2L15 6L12 10L9 6L12 2Z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10L15 14L12 18L9 14L12 10Z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 6L8 10L5 14L2 10L5 6Z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 6L22 10L19 14L16 10L19 6Z"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-display text-xl text-charcoal mb-2">100% Bienenwachs</h4>
-                    <p class="text-sm text-charcoal-light">Natürlicher Honigduft aus regionaler Imkerei</p>
-                </article>
-                
-                <!-- KACHEL 5: Rapswachs -->
-                <article class="glass-card-sage rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center text-center icon-card reveal delay-200">
-                    <div class="w-16 h-16 rounded-2xl bg-sage/20 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22c4-4 8-7.582 8-12a8 8 0 10-16 0c0 4.418 4 8 8 12z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12a2 2 0 100-4 2 2 0 000 4z"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-display text-xl text-charcoal mb-2">Rapswachs</h4>
-                    <p class="text-sm text-charcoal-light">Pflanzlich & vegan, sanfter Duft</p>
-                </article>
-                
-                <!-- KACHEL 6: Nachhaltigkeit -->
-                <article class="glass-card-warm rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center text-center icon-card reveal delay-300">
-                    <div class="w-16 h-16 rounded-2xl bg-toffee/15 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-toffee" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-display text-xl text-charcoal mb-2">Aus Kerzenresten</h4>
-                    <p class="text-sm text-charcoal-light">Nachhaltig recycelt, neues Leben</p>
-                </article>
-                
-                <!-- KACHEL 7: Keraflott Deko -->
-                <article class="md:col-span-2 lg:col-span-2 glass-card-warm rounded-3xl overflow-hidden relative reveal delay-200">
-                    <div class="absolute top-4 right-4 z-10">
-                        <span class="seasonal-badge text-white text-xs uppercase tracking-wider px-4 py-2 rounded-full">Keraflott</span>
-                    </div>
-                    <div class="flex flex-col md:flex-row h-full">
-                        <div class="p-8 md:p-10 flex flex-col justify-center md:w-1/2">
-                            <span class="text-xs uppercase tracking-[0.15em] text-toffee mb-3">Handgegossene Deko</span>
-                            <h3 class="font-display text-3xl md:text-4xl text-charcoal mb-4">
-                                <span class="italic text-toffee">Keraflott-Objekte</span>
-                            </h3>
-                            <p class="text-charcoal-light leading-relaxed mb-6">
-                                Kerzenuntersetzer, Teelichthalter und dekorative Figuren – 
-                                alle von Hand aus Keraflott (Keramikgießmasse) gefertigt. 
-                                Je nach Saison mit passenden Motiven.
-                            </p>
-                            <a href="#kontakt" class="inline-flex items-center gap-2 text-toffee hover:text-toffee-dark font-medium transition-colors group">
-                                <span>Anfragen</span>
-                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="md:w-1/2 min-h-[200px] md:min-h-0 relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-toffee-light/40 via-copper-sand/30 to-cream flex items-center justify-center gap-6">
-                                <div class="text-center">
-                                    <svg class="w-16 h-16 text-toffee/40" viewBox="0 0 64 64" fill="currentColor">
-                                        <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="3"/>
-                                        <circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-                                        <circle cx="32" cy="32" r="12" fill="currentColor" opacity="0.3"/>
-                                    </svg>
-                                    <span class="text-xs text-toffee/60 mt-2 block">Untersetzer</span>
-                                </div>
-                                <div class="text-center">
-                                    <svg class="w-16 h-16 text-toffee/40" viewBox="0 0 64 64" fill="currentColor">
-                                        <rect x="16" y="28" width="32" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
-                                        <ellipse cx="32" cy="36" rx="8" ry="4" fill="currentColor" opacity="0.4"/>
-                                    </svg>
-                                    <span class="text-xs text-toffee/60 mt-2 block">Teelichthalter</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- KACHEL 8: Paraffin -->
-                <article class="glass-card rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center text-center icon-card reveal delay-300">
-                    <div class="w-16 h-16 rounded-2xl bg-copper-sand/20 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-copper-sand" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2L2 9L12 22L22 9L12 2Z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 9H22"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-display text-xl text-charcoal mb-2">Premium Paraffin</h4>
-                    <p class="text-sm text-charcoal-light">Brillante Farben, lange Brenndauer</p>
-                </article>
-                
-                <!-- KACHEL 9: Kontakt -->
-                <article id="kontakt" class="glass-card-warm rounded-3xl p-8 flex flex-col items-center justify-center text-center reveal delay-400">
-                    <div class="w-14 h-14 rounded-full bg-toffee/20 flex items-center justify-center mb-4 animate-glow">
-                        <svg class="w-7 h-7 text-toffee" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-display text-xl text-charcoal mb-2">Fragen?</h4>
-                    <p class="text-sm text-charcoal-light mb-4">Wir beraten Sie gerne persönlich</p>
-                    <a href="/cdn-cgi/l/email-protection#3d50525354565c5a525a5251517d5a5045135958" class="text-toffee hover:text-toffee-dark transition-colors underline underline-offset-4">
-                        <span class="__cf_email__" data-cfemail="90fdfffef9fbf1f7fff7fffcfcd0f7fde8bef4f5">[email&#160;protected]</span>
-                    </a>
-                </article>
-                
+            <div class="glass-card p-8 rounded-3xl reveal delay-200">
+                <h3 class="font-display text-2xl mb-4">Bienenwachs</h3>
+                <p class="text-charcoal-light">100% Naturrein vom regionalen Imker mit Honigduft.</p>
             </div>
-        </section>
-        
-        <!-- ANLÄSSE SECTION -->
-        <section id="anlaesse" class="relative px-4 md:px-8 lg:px-12 py-16 md:py-24 bg-cream-dark">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12 reveal">
-                    <span class="text-sm uppercase tracking-[0.2em] text-toffee mb-4 block">Für jeden Moment</span>
-                    <h2 class="font-display text-3xl md:text-5xl text-charcoal mb-6">Kerzen für besondere Anlässe</h2>
-                    <p class="text-charcoal-light max-w-2xl mx-auto">
-                        Ob religiöse Feiern oder Meilensteine im Leben – wir gestalten individuelle 
-                        Kerzen, die Ihren besonderen Moment unvergesslich machen.
-                    </p>
-                </div>
-                
-                <div class="flex flex-wrap justify-center gap-4 reveal delay-100">
-                    <a href="#kontakt" class="occasion-tag glass-card px-6 py-4 rounded-2xl text-center min-w-[140px]">
-                        <svg class="w-8 h-8 mx-auto text-toffee mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
-                        </svg>
-                        <span class="font-display text-lg text-charcoal">Taufe</span>
-                    </a>
-                    
-                    <a href="#kontakt" class="occasion-tag glass-card px-6 py-4 rounded-2xl text-center min-w-[140px]">
-                        <svg class="w-8 h-8 mx-auto text-toffee mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
-                        <span class="font-display text-lg text-charcoal">Kommunion</span>
-                    </a>
-                    
-                    <a href="#kontakt" class="occasion-tag glass-card px-6 py-4 rounded-2xl text-center min-w-[140px]">
-                        <svg class="w-8 h-8 mx-auto text-toffee mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                        </svg>
-                        <span class="font-display text-lg text-charcoal">Konfirmation</span>
-                    </a>
-                    
-                    <a href="#kontakt" class="occasion-tag glass-card-blush px-6 py-4 rounded-2xl text-center min-w-[140px]">
-                        <svg class="w-8 h-8 mx-auto text-toffee mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                        <span class="font-display text-lg text-charcoal">Hochzeit</span>
-                    </a>
-                    
-                    <a href="#kontakt" class="occasion-tag glass-card px-6 py-4 rounded-2xl text-center min-w-[140px]">
-                        <svg class="w-8 h-8 mx-auto text-toffee mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                        </svg>
-                        <span class="font-display text-lg text-charcoal">Familienleben</span>
-                    </a>
-                    
-                    <a href="#kontakt" class="occasion-tag glass-card-honey px-6 py-4 rounded-2xl text-center min-w-[140px]">
-                        <svg class="w-8 h-8 mx-auto text-honey mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
-                        </svg>
-                        <span class="font-display text-lg text-charcoal">Jubiläum</span>
-                    </a>
-                </div>
-                
-                <p class="text-center text-charcoal-light mt-8 reveal delay-200">
-                    <span class="text-toffee">→</span> Sprechen Sie uns an für Ihre individuelle Wunschkerze!
-                </p>
+            <div class="glass-card p-8 rounded-3xl reveal delay-300">
+                <h3 class="font-display text-2xl mb-4">Keraflott</h3>
+                <p class="text-charcoal-light">Handgegossene Deko-Objekte aus feiner Gießmasse.</p>
             </div>
-        </section>
-        
-        <!-- ÜBER UNS -->
-        <section id="ueber-uns" class="relative px-4 md:px-8 lg:px-12 py-16 md:py-24">
-            <div class="max-w-4xl mx-auto text-center reveal">
-                <span class="text-sm uppercase tracking-[0.2em] text-toffee mb-4 block">Über uns</span>
-                <h2 class="font-display text-3xl md:text-5xl text-charcoal mb-8">Die Geschichte hinter dem Duft</h2>
-                <p class="text-lg text-charcoal-light leading-relaxed mb-6">
-                    Was als Hobby begann, ist heute unsere Leidenschaft. In unserer kleinen Kerzenküche 
-                    entstehen handgegossene Kerzen, duftende Wachsmelts und dekorative Keraflott-Objekte – 
-                    jedes Stück ein Unikat.
-                </p>
-                <p class="text-lg text-charcoal-light leading-relaxed mb-6">
-                    Wir verwenden 100% Bienenwachs von regionalen Imkern, pflanzliches Rapswachs und 
-                    hochwertiges Paraffin. Besonders stolz sind wir auf unsere nachhaltigen Kreationen 
-                    aus gesammelten Kerzenresten – so bekommt jedes Wachsstück ein zweites Leben.
-                </p>
-                <p class="text-lg text-charcoal-light leading-relaxed">
-                    Ob Taufkerze, Hochzeitskerze oder saisonale Deko – bei uns ist alles echte Handarbeit, 
-                    gefertigt mit Liebe zum Detail.
-                </p>
-            </div>
-        </section>
-        
-        <!-- TESTIMONIALS -->
-        <section class="relative px-4 md:px-8 lg:px-12 py-16 md:py-24 bg-cream-dark">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-12 reveal">
-                    <span class="text-sm uppercase tracking-[0.2em] text-toffee mb-4 block">Kundenstimmen</span>
-                    <h2 class="font-display text-3xl md:text-4xl text-charcoal">Was andere sagen</h2>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <article class="glass-card rounded-2xl p-6 reveal delay-100">
-                        <div class="flex items-center gap-1 mb-4 text-honey">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                        </div>
-                        <p class="text-charcoal-light mb-4 italic">„Die Taufkerze für unsere Tochter war wunderschön! Echte Handarbeit mit so viel Liebe zum Detail."</p>
-                        <p class="text-sm text-toffee font-medium">– Sabine M.</p>
-                    </article>
-                    
-                    <article class="glass-card rounded-2xl p-6 reveal delay-200">
-                        <div class="flex items-center gap-1 mb-4 text-honey">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                        </div>
-                        <p class="text-charcoal-light mb-4 italic">„Die Duftwachsmelts sind fantastisch! Der Vanilleduft hält ewig und riecht so natürlich."</p>
-                        <p class="text-sm text-toffee font-medium">– Markus T.</p>
-                    </article>
-                    
-                    <article class="glass-card rounded-2xl p-6 reveal delay-300">
-                        <div class="flex items-center gap-1 mb-4 text-honey">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                        </div>
-                        <p class="text-charcoal-light mb-4 italic">„Die Keraflott-Teelichthalter sind so schön! Perfekt als Geschenk. Komme immer wieder!"</p>
-                        <p class="text-sm text-toffee font-medium">– Julia K.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- NEWSLETTER -->
-        <section class="relative px-4 md:px-8 lg:px-12 py-16 md:py-24">
-            <div class="max-w-2xl mx-auto text-center reveal">
-                <span class="text-sm uppercase tracking-[0.2em] text-toffee mb-4 block">Newsletter</span>
-                <h2 class="font-display text-3xl md:text-4xl text-charcoal mb-4">Bleiben Sie inspiriert</h2>
-                <p class="text-charcoal-light mb-8">
-                    Neue Düfte, saisonale Deko und exklusive Angebote – direkt in Ihr Postfach.
-                </p>
-                
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" action="#" method="POST">
-                    <label for="email" class="sr-only">E-Mail-Adresse</label>
-                    <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required
-                        class="flex-1 px-5 py-3 rounded-full border border-toffee/20 bg-white/80 text-charcoal placeholder:text-charcoal-light/60 focus:outline-none focus:border-toffee focus:ring-2 focus:ring-toffee/20 transition-all">
-                    <button type="submit" class="px-8 py-3 bg-toffee hover:bg-toffee-dark text-white font-medium rounded-full transition-all hover:shadow-lg hover:shadow-toffee/30">
-                        Anmelden
-                    </button>
-                </form>
-                
-                <p class="text-xs text-charcoal-light/60 mt-4">
-                    Mit der Anmeldung stimmen Sie unserer Datenschutzerklärung zu.
-                </p>
-            </div>
-        </section>
-        
-    </main>
+        </div>
+    </section>
+
+    <!-- ÜBER UNS -->
+    <section id="ueber-uns" class="py-24 bg-cream-dark px-6">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="font-display text-4xl mb-8">Echte Handarbeit</h2>
+            <p class="text-lg text-charcoal-light leading-relaxed mb-6">Was als Leidenschaft begann, fertigen wir heute in unserer kleinen Kerzenküche in Balingen. Jede Kerze ist ein Unikat, oft nachhaltig aus wertvollen Wachsresten recycelt.</p>
+        </div>
+    </section>
 
     <!-- FOOTER -->
-    <footer class="bg-charcoal text-cream">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-10 h-10 text-toffee-light" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M32 8C32 8 24 18 24 26C24 30.4183 27.5817 34 32 34C36.4183 34 40 30.4183 40 26C40 18 32 8 32 8Z" fill="currentColor" opacity="0.8"/>
-                            <rect x="26" y="34" width="12" height="22" rx="2" fill="currentColor"/>
-                            <rect x="22" y="54" width="20" height="4" rx="1" fill="currentColor" opacity="0.6"/>
-                        </svg>
-                        <span class="font-display text-2xl text-cream">Kerzenküche</span>
-                    </div>
-                    <p class="text-cream/70 max-w-sm">
-                        Handgegossene Kerzen aus Bienenwachs, Rapswachs & Paraffin. 
-                        Duftwachsmelts und Keraflott-Deko – alles echte Handarbeit.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-display text-lg text-cream mb-4">Navigation</h4>
-                    <nav class="flex flex-col gap-2 text-sm">
-                        <a href="#produkte" class="text-cream/70 hover:text-toffee-light transition-colors">Produkte</a>
-                        <a href="#anlaesse" class="text-cream/70 hover:text-toffee-light transition-colors">Anlässe</a>
-                        <a href="#ueber-uns" class="text-cream/70 hover:text-toffee-light transition-colors">Über uns</a>
-                        <a href="#kontakt" class="text-cream/70 hover:text-toffee-light transition-colors">Kontakt</a>
-                    </nav>
-                </div>
-                
-                <div>
-                    <h4 class="font-display text-lg text-cream mb-4">Kontakt</h4>
-                    <div class="text-sm text-cream/70 space-y-2">
-                        <p>Monika Gogoll</p>
-                        <p>Hebsackstr. 3<br>72336 Balingen</p>
-                        <p><a href="tel:+491741941927" class="hover:text-toffee-light transition-colors">+49 174 1941927</a></p>
-                        <p><a href="/cdn-cgi/l/email-protection#90fdfffef9fbf1f7fff7fffcfcd0f7fde8bef4f5" class="hover:text-toffee-light transition-colors"><span class="__cf_email__" data-cfemail="a1cccecfc8cac0c6cec6cecdcde1c6ccd98fc5c4">[email&#160;protected]</span></a></p>
-                    </div>
-                </div>
-                
+    <footer id="kontakt" class="bg-charcoal text-cream py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12">
+            <div>
+                <h4 class="font-display text-2xl mb-4">Kerzenküche</h4>
+                <p class="text-cream/60">Monika Gogoll<br>Hebsackstr. 3<br>72336 Balingen</p>
             </div>
-            
-            <!-- RECHTLICHES - AUFKLAPPBAR -->
-            <div class="border-t border-cream/10 pt-8 mb-8">
-                <h4 class="font-display text-lg text-cream mb-4">Rechtliches</h4>
-                
-                <!-- IMPRESSUM ACCORDION -->
-                <div class="mb-3">
-                    <button type="button" onclick="toggleAccordion('impressum')" class="accordion-btn w-full flex items-center justify-between py-3 px-4 bg-cream/5 hover:bg-cream/10 rounded-xl transition-colors text-left">
-                        <span class="text-cream font-medium">Impressum</span>
-                        <svg class="w-5 h-5 text-cream/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="accordion-impressum" class="accordion-content">
-                        <div class="p-4 bg-cream/5 rounded-b-xl mt-1 legal-content text-cream/70">
-                            <h4>Angaben gemäß § 5 TMG</h4>
-                            <p>
-                                <strong class="text-cream">Kerzenküche</strong><br>
-                                Monika Gogoll<br>
-                                Hebsackstr. 3<br>
-                                72336 Balingen
-                            </p>
-                            
-                            <h4>Kontakt</h4>
-                            <p>
-                                Telefon: +49 174 1941927<br>
-                                E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d00020304060c0a020a0201012d0a0015430908">[email&#160;protected]</a>
-                            </p>
-                            
-                            <h4>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h4>
-                            <p>Monika Gogoll, Hebsackstr. 3, 72336 Balingen</p>
-                            
-                            <h4>EU-Streitschlichtung</h4>
-                            <p>
-                                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                                <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-toffee-light hover:underline">https://ec.europa.eu/consumers/odr/</a>
-                            </p>
-                            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-                            
-                            <h4>Haftung für Inhalte</h4>
-                            <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
-                            
-                            <h4>Haftung für Links</h4>
-                            <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.</p>
-                            
-                            <h4>Urheberrecht</h4>
-                            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- DATENSCHUTZ ACCORDION -->
-                <div>
-                    <button type="button" onclick="toggleAccordion('datenschutz')" class="accordion-btn w-full flex items-center justify-between py-3 px-4 bg-cream/5 hover:bg-cream/10 rounded-xl transition-colors text-left">
-                        <span class="text-cream font-medium">Datenschutzerklärung</span>
-                        <svg class="w-5 h-5 text-cream/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="accordion-datenschutz" class="accordion-content">
-                        <div class="p-4 bg-cream/5 rounded-b-xl mt-1 legal-content text-cream/70">
-                            <h4>1. Datenschutz auf einen Blick</h4>
-                            <p>Die folgenden Hinweise geben einen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
-                            
-                            <h4>2. Verantwortliche Stelle</h4>
-                            <p>
-                                <strong class="text-cream">Kerzenküche</strong> – Monika Gogoll<br>
-                                Hebsackstr. 3, 72336 Balingen<br>
-                                Telefon: +49 174 1941927<br>
-                                E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be6e4e5e2e0eaece4ece4e7e7cbece6f3a5efee">[email&#160;protected]</a>
-                            </p>
-                            
-                            <h4>3. Datenerfassung auf dieser Website</h4>
-                            <p><strong class="text-toffee-light">Server-Log-Dateien:</strong> Der Provider erhebt automatisch Informationen (Browsertyp, Betriebssystem, IP-Adresse, Uhrzeit). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
-                            <p><strong class="text-toffee-light">Cookies:</strong> Diese Website verwendet ausschließlich technisch notwendige Cookies. Keine Tracking- oder Analyse-Cookies.</p>
-                            
-                            <h4>4. Kontaktaufnahme</h4>
-                            <p><strong class="text-toffee-light">E-Mail & Telefon:</strong> Bei Kontaktaufnahme werden Ihre Daten zur Bearbeitung gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. b/f DSGVO.</p>
-                            <p><strong class="text-toffee-light">WhatsApp:</strong> Bei WhatsApp-Kontakt werden Daten von Meta Platforms Ireland Limited verarbeitet. <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-toffee-light hover:underline">WhatsApp Datenschutz</a></p>
-                            
-                            <h4>5. Newsletter</h4>
-                            <p>Anmeldung erfolgt im Double-Opt-In-Verfahren. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO. Abmeldung jederzeit möglich.</p>
-                            
-                            <h4>6. Externe Dienste</h4>
-                            <p><strong class="text-toffee-light">Tailwind CSS (CDN):</strong> Diese Website nutzt Tailwind CSS über ein CDN. Dabei kann Ihre IP-Adresse übermittelt werden. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
-                            
-                            <h4>7. Ihre Rechte</h4>
-                            <ul>
-                                <li>Auskunft (Art. 15 DSGVO)</li>
-                                <li>Berichtigung (Art. 16 DSGVO)</li>
-                                <li>Löschung (Art. 17 DSGVO)</li>
-                                <li>Einschränkung (Art. 18 DSGVO)</li>
-                                <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-                                <li>Widerspruch (Art. 21 DSGVO)</li>
-                                <li>Beschwerde bei Aufsichtsbehörde (Art. 77 DSGVO)</li>
-                            </ul>
-                            
-                            <h4>8. Aktualität</h4>
-                            <p>Stand: Januar 2026</p>
-                        </div>
-                    </div>
+            <div>
+                <h4 class="font-display text-xl mb-4">Kontakt</h4>
+                <p class="text-cream/60">Telefon: +49 174 1941927<br>E-Mail: hallo@kerzenkueche.de</p>
+            </div>
+            <div>
+                <h4 class="font-display text-xl mb-4">Rechtliches</h4>
+                <div class="flex flex-col gap-2 text-cream/60">
+                    <button onclick="toggleAccordion('impressum')" class="text-left hover:text-white transition-colors">Impressum</button>
+                    <button onclick="toggleAccordion('datenschutz')" class="text-left hover:text-white transition-colors">Datenschutz</button>
                 </div>
             </div>
-            
-            <!-- Copyright & Social -->
-            <div class="border-t border-cream/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-cream/50">© 2026 Kerzenküche. Alle Rechte vorbehalten.</p>
-                
-                <div class="flex items-center gap-4">
-                    <a href="#" class="text-cream/50 hover:text-toffee-light transition-colors" aria-label="Instagram">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="#" class="text-cream/50 hover:text-toffee-light transition-colors" aria-label="Facebook">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
+        </div>
+
+        <!-- RECHTLICHE TEXTE (Accordions) -->
+        <div class="max-w-7xl mx-auto">
+            <div id="acc-impressum" class="accordion-content bg-white/5 rounded-xl mt-4">
+                <div class="p-8 text-sm text-cream/80">
+                    <h3 class="text-xl font-display mb-4 text-white">Impressum</h3>
+                    <p>Monika Gogoll<br>Kerzenküche<br>Hebsackstr. 3<br>72336 Balingen</p>
+                    <p class="mt-4 font-bold">Kontakt:</p>
+                    <p>E-Mail: hallo@kerzenkueche.de</p>
+                    <p class="mt-4 italic text-xs">Gemäß § 19 UStG wird keine Umsatzsteuer erhoben (Kleinunternehmerstatus).</p>
+                </div>
+            </div>
+            <div id="acc-datenschutz" class="accordion-content bg-white/5 rounded-xl mt-4">
+                <div class="p-8 text-sm text-cream/80">
+                    <h3 class="text-xl font-display mb-4 text-white">Datenschutz</h3>
+                    <p>Wir erheben keine Daten zu Werbezwecken. Diese Website wird über GitHub Pages gehostet. Beim Besuch werden technisch notwendige Server-Logs erstellt. Bei Nutzung des WhatsApp-Buttons werden Daten an Meta übertragen.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/491741941927?text=Hallo%20Kerzenküche!%20Ich%20interessiere%20mich%20für%20Ihre%20Produkte." 
-        target="_blank" rel="noopener noreferrer"
-        class="whatsapp-btn fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5C] text-white font-medium pl-5 pr-6 py-3.5 rounded-full shadow-lg"
-        aria-label="Per WhatsApp anfragen">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span class="hidden sm:inline">Direkt anfragen</span>
-        <span class="sm:hidden">WhatsApp</span>
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/491741941927?text=Hallo!%20Ich%20habe%20eine%20Anfrage." class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
-    <!-- COOKIE BANNER -->
-    <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 right-0 z-[60] p-4 bg-charcoal/95 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-cream/80 text-center sm:text-left">
-                Diese Website verwendet nur technisch notwendige Cookies.
-            </p>
-            <button id="cookie-accept" class="px-5 py-2 text-sm bg-toffee hover:bg-toffee-dark text-white rounded-full transition-colors">Verstanden</button>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
-        // Scroll Reveal
-        if (!prefersReducedMotion) {
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-        } else {
-            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-        }
-        
-        // Sticky Header
-        const header = document.querySelector('.header-sticky');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.pageYOffset > 100);
-        }, { passive: true });
-        
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-                    }
+    <!-- JAVASCRIPT FIXED -->
+    <script>
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
-        });
-        
-        // Cookie Banner
-        const cookieBanner = document.getElementById('cookie-banner');
-        const cookieAccept = document.getElementById('cookie-accept');
-        
-        if (!localStorage.getItem('cookieNotice')) {
-            setTimeout(() => cookieBanner.classList.add('visible'), 2000);
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Accordion Logic
+        function toggleAccordion(id) {
+            const content = document.getElementById('acc-' + id);
+            content.classList.toggle('open');
         }
-        
-        cookieAccept?.addEventListener('click', () => {
-            localStorage.setItem('cookieNotice', 'accepted');
-            cookieBanner.classList.remove('visible');
-        });
-        
-        // Accordion Toggle
-        function toggleAccordion(name) {
-            con
+    </script>
+</body>
+</html>
