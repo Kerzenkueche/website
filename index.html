@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Meta Tags -->
     <title>Kerzenküche Balingen | Handgegossene Kerzen von Armin & Monika</title>
     <meta name="description" content="Handgegossene Kerzen aus Bienenwachs und Paraffin. Von Armin & Monika in Balingen. Jede Kerze ein Unikat – für Taufe, Hochzeit, Jubiläum.">
     <meta name="keywords" content="Kerzen Balingen, Bienenwachskerzen, Taufkerze individuell, Hochzeitskerze, handgegossen, Upcycling Kerzen">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Kerzenküche Balingen | Handgegossene Kerzen">
     <meta property="og:description" content="Handgegossene Kerzen aus Bienenwachs und Paraffin. Von Armin & Monika in Balingen.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://www.xn--kerzenkche-geb.de/">
     <meta property="og:image" content="og-image.jpg">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -101,14 +97,11 @@
 </head>
 <body class="flex flex-col min-h-screen selection:bg-accent selection:text-white">
 
-    <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-secondary transition-all">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
-                <!-- Logo -->
                 <a href="#" class="font-serif text-2xl font-bold tracking-tight text-primary">Kerzenküche</a>
                 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-10">
                     <a href="#manufaktur" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Manufaktur</a>
                     <a href="#material" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Material</a>
@@ -116,7 +109,6 @@
                     <a href="#sammelstellen" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Sammelstellen</a>
                 </div>
 
-                <!-- Kontakt CTA Button -->
                 <div>
                     <a href="#kontakt" class="text-xs uppercase tracking-widest border border-primary/20 text-primary px-6 py-2.5 rounded-full hover:bg-primary hover:text-paper transition-all font-medium">
                         Kontakt
@@ -126,7 +118,6 @@
         </div>
     </nav>
 
-    <!-- HERO SEKTION -->
     <header class="relative bg-secondary py-24 lg:py-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -139,7 +130,6 @@
                         Wir gießen jede Kerze von Hand – aus Bienenwachs, Rapswachs und Paraffin.
                     </p>
                     
-                    <!-- Tags -->
                     <div class="flex gap-6 mb-12 text-xs font-medium uppercase tracking-widest text-primary/40">
                         <span class="border-b border-primary/20 pb-1">Bienenwachs</span>
                         <span class="border-b border-primary/20 pb-1">Upcycling</span>
@@ -150,7 +140,6 @@
                 </div>
                 
                 <div class="relative reveal delay-100">
-                    <!-- Bild im 5:4 Format -->
                     <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
                         <img src="hero.jpg" alt="Handgegossene Bienenwachskerze in der Kerzenküche Balingen">
                     </div>
@@ -159,18 +148,15 @@
         </div>
     </header>
 
-    <!-- ÜBER UNS / MANUFAKTUR -->
     <section id="manufaktur" class="py-32 bg-paper">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <!-- Bild Links (5:4) -->
                 <div class="order-2 lg:order-1 reveal">
                     <div class="aspect-5-4 shadow-lg hover-zoom bg-secondary">
                         <img src="team.jpg" alt="Armin und Monika beim Kerzengießen in ihrer Werkstatt">
                     </div>
                 </div>
                 
-                <!-- Text Rechts -->
                 <div class="order-1 lg:order-2 reveal">
                     <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Die Macher</span>
                     <h2 class="text-4xl lg:text-5xl font-serif mb-8 leading-tight text-primary">Vier Hände, <br>eine Werkstatt.</h2>
@@ -187,10 +173,9 @@
         </div>
     </section>
 
-    <!-- MATERIAL / ROHSTOFFE -->
     <section id="material" class="py-32 bg-secondary">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="grid gap-20 items-center max-w-4xl mx-auto">
                 <div class="reveal">
                     <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Rohstoffe</span>
                     <h2 class="text-4xl lg:text-5xl font-serif mb-10 text-primary">Ehrliche Materialien.</h2>
@@ -205,7 +190,13 @@
                                 100% reines Bienenwachs duftet natürlich nach Honig und reinigt die Luft beim Brennen. Rapswachs aus der Region ist die vegane Alternative – brennt sauber, rußfrei und ohne Geruch.
                             </p>
                         </div>
+                        
                         <div class="w-full h-[1px] bg-primary/10"></div>
+                        
+                        <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
+                            <img src="bienenwachs.jpg" alt="Natürliches Bienenwachs und Docht für handgegossene Kerzen">
+                        </div>
+
                         <div>
                             <h3 class="text-2xl font-serif mb-3 text-primary">Upcycling & Paraffin</h3>
                             <p class="text-textlight leading-relaxed font-light">
@@ -214,29 +205,19 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="reveal">
-                    <!-- Bild (5:4) -->
-                    <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
-                        <img src="bienenwachs.jpg" alt="Natürliches Bienenwachs und Docht für handgegossene Kerzen">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ANLÄSSE / FESTLICHE KERZEN -->
     <section id="anlaesse" class="py-32 bg-paper">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <!-- Bild Links (5:4) -->
                 <div class="reveal">
                     <div class="aspect-5-4 shadow-lg hover-zoom bg-secondary">
                         <img src="anlass.jpg" alt="Individuelle Taufkerze mit persönlicher Gravur">
                     </div>
                 </div>
 
-                <!-- Text Rechts -->
                 <div class="reveal">
                     <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Lebensbegleiter</span>
                     <h2 class="text-4xl lg:text-5xl font-serif mb-8 text-primary">Kerzen für <br>Meilensteine.</h2>
@@ -248,7 +229,6 @@
         </div>
     </section>
 
-    <!-- DUFT & DESIGN -->
     <section id="design" class="py-32 bg-secondary">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
@@ -273,7 +253,6 @@
                 </div>
 
                 <div class="reveal order-1 lg:order-2">
-                    <!-- Bild (5:4) -->
                     <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
                         <img src="gesteck.jpg" alt="Kerze fur ein Gesteck trapiert">
                     </div>
@@ -282,7 +261,6 @@
         </div>
     </section>
 
-    <!-- SAMMELSTELLEN / KREISLAUFWIRTSCHAFT -->
     <section id="sammelstellen" class="py-32 bg-paper">
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <div class="reveal">
@@ -311,7 +289,6 @@
         </div>
     </section>
 
-    <!-- KONTAKT -->
     <section id="kontakt" class="py-32 bg-primary text-paper text-center">
         <div class="max-w-3xl mx-auto px-6 lg:px-8 reveal">
             <h3 class="text-4xl lg:text-5xl font-serif mb-8">Wunschkerze bestellen?</h3>
@@ -332,11 +309,9 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-paper pt-20 pb-10 border-t border-secondary">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-12 mb-16">
-                <!-- Links: Info -->
                 <div>
                     <h3 class="font-serif text-2xl font-bold mb-6 text-primary">Kerzenküche</h3>
                     <p class="text-textlight text-sm leading-relaxed">
@@ -344,7 +319,6 @@
                         Von Armin & Monika.
                     </p>
                 </div>
-                <!-- Mitte: Kontakt -->
                 <div>
                     <h4 class="uppercase text-xs font-bold tracking-widest mb-6 text-primary">Kontakt</h4>
                     <ul class="space-y-4 text-sm text-textlight">
@@ -352,7 +326,6 @@
                         <li><a href="mailto:info@kerzenküche.de" class="hover:text-primary transition-colors">info@kerzenküche.de</a></li>
                     </ul>
                 </div>
-                <!-- Rechts: Rechtliches -->
                 <div>
                     <h4 class="uppercase text-xs font-bold tracking-widest mb-6 text-primary">Rechtliches</h4>
                     <ul class="space-y-4 text-sm text-textlight">
@@ -368,7 +341,6 @@
         </div>
     </footer>
 
-    <!-- MODALS -->
     <div id="impressum" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
         <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
             <button onclick="toggleModal('impressum')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
@@ -419,5 +391,3 @@
     </script>
 </body>
 </html>
-
-
