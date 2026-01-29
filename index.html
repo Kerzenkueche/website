@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="de" class="<!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kerzenküche Balingen – Handgefertigte Unikate von Armin & Monika. Bienenwachs, Rapswachs und Upcycling.">
-    <title>Kerzenküche | Handgegossene Momente</title>
     
+    <!-- SEO & Meta Tags -->
+    <title>Kerzenküche Balingen | Handgegossene Kerzen von Armin & Monika</title>
+    <meta name="description" content="Handgegossene Kerzen aus Bienenwachs und Paraffin. Von Armin & Monika in Balingen. Jede Kerze ein Unikat – für Taufe, Hochzeit, Jubiläum.">
+    <meta name="keywords" content="Kerzen Balingen, Bienenwachskerzen, Taufkerze individuell, Hochzeitskerze, handgegossen, Upcycling Kerzen">
+
     <!-- Open Graph -->
-    <meta property="og:title" content="Kerzenküche Balingen">
-    <meta property="og:image" content="hero.jpg">
+    <meta property="og:title" content="Kerzenküche Balingen | Handgegossene Kerzen">
+    <meta property="og:description" content="Handgegossene Kerzen aus Bienenwachs und Paraffin. Von Armin & Monika in Balingen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.xn--kerzenkche-geb.de/">
+    <meta property="og:image" content="og-image.jpg">
     
-    <!-- Fonts: Playfair (Emotional) & Inter (Clean) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -27,10 +32,11 @@
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        primary: '#2C2C2C',   /* Weiches Anthrazit statt Schwarz */
-                        secondary: '#F9F7F5', /* Sehr helles Creme-Weiß */
+                        primary: '#433835',   /* Tiefes, warmes Espresso-Braun statt Schwarz */
+                        secondary: '#F5F2EB', /* Warmer Sandton statt Grau */
+                        paper: '#FDFBF7',     /* Cremiges Off-White statt Reinweiß */
                         accent: '#C59D5F',    /* Mattes Gold */
-                        paper: '#FFFFFF',
+                        textlight: '#8C8582', /* Sanftes Taupe für Nebentexte */
                     }
                 }
             }
@@ -38,244 +44,267 @@
     </script>
     
     <style>
-        body { font-family: 'Inter', sans-serif; color: #2C2C2C; background-color: #F9F7F5; }
+        body { font-family: 'Inter', sans-serif; color: #433835; background-color: #FDFBF7; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         
-        /* Das 5:4 Format für alle Bilder */
-        .aspect-standard {
+        /* 5:4 Format für alle Bilder */
+        .aspect-5-4 {
             aspect-ratio: 5 / 4;
             overflow: hidden;
-            background-color: #f0f0f0;
+            background-color: #ECE8E1; /* Warmer Platzhalter */
+            border-radius: 0.5rem;
         }
         
-        .aspect-standard img {
+        .aspect-5-4 img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 1.5s ease;
+            transition: transform 1.2s ease;
         }
         
-        .card-hover:hover img {
+        .hover-zoom:hover img {
             transform: scale(1.03);
         }
 
-        /* Sanfte Animation beim Scrollen */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease-out;
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .btn-primary {
-            background-color: #2C2C2C;
-            color: white;
-            padding: 0.8rem 2rem;
+            background-color: #433835;
+            color: #FDFBF7;
+            padding: 0.75rem 1.75rem;
             border-radius: 9999px;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            font-weight: 500;
             transition: all 0.3s;
             display: inline-block;
         }
-        .btn-primary:hover {
-            background-color: #C59D5F;
-            transform: translateY(-2px);
+        .btn-primary:hover { background-color: #C59D5F; color: white; transform: translateY(-1px); }
+
+        .btn-outline {
+            border: 1px solid #D1CDC7;
+            color: #433835;
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
         }
+        .btn-outline:hover { border-color: #433835; background-color: #fff; }
+
+        /* Smooth Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen selection:bg-accent selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-secondary transition-all">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
-                <a href="#" class="font-serif text-2xl tracking-wide italic">Kerzenküche</a>
+                <a href="#" class="font-serif text-2xl font-bold tracking-tight text-primary">Kerzenküche</a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-12">
-                    <a href="#vision" class="text-xs uppercase tracking-[0.2em] hover:text-accent transition-colors">Vision</a>
-                    <a href="#handwerk" class="text-xs uppercase tracking-[0.2em] hover:text-accent transition-colors">Handwerk</a>
-                    <a href="#kollektion" class="text-xs uppercase tracking-[0.2em] hover:text-accent transition-colors">Kollektion</a>
-                    <a href="#kontakt" class="text-xs uppercase tracking-[0.2em] hover:text-accent transition-colors">Kontakt</a>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#manufaktur" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Manufaktur</a>
+                    <a href="#material" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Material</a>
+                    <a href="#anlaesse" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Anlässe</a>
+                    <a href="#sammelstellen" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Sammelstellen</a>
                 </div>
 
-                <!-- Kontakt Button (Statt Warenkorb) -->
-                <div class="flex items-center">
-                    <a href="https://wa.me/491741941927" class="text-xs font-medium border border-gray-200 px-6 py-2 rounded-full hover:bg-primary hover:text-white transition-all">
-                        Anfrage
+                <!-- Kontakt CTA Button -->
+                <div>
+                    <a href="#kontakt" class="text-xs uppercase tracking-widest border border-primary/20 text-primary px-6 py-2.5 rounded-full hover:bg-primary hover:text-paper transition-all font-medium">
+                        Kontakt
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="relative bg-secondary pt-20 pb-32 overflow-hidden">
+    <!-- HERO SEKTION -->
+    <header class="relative bg-secondary py-24 lg:py-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="z-10 fade-up">
-                    <span class="text-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">Armin & Monika</span>
-                    <h1 class="text-5xl lg:text-7xl leading-[1.1] mb-8 text-primary">
-                        Momente aus der <br> <span class="italic text-gray-500">Kerzenküche.</span>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="z-10 reveal">
+                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-4 block">Armin & Monika</span>
+                    <h1 class="text-5xl lg:text-7xl font-serif font-medium leading-[1.1] mb-8 text-primary">
+                        Kerzen aus der <br> <span class="italic text-primary/80">Werkstatt.</span>
                     </h1>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-10 max-w-md font-light">
-                        Handgegossene Kerzen aus echtem Bienenwachs und hochwertigem Paraffin. Jede Kerze erzählt ihre eigene Geschichte – mit Liebe gefertigt, einzigartig duftend.
+                    <p class="text-textlight text-lg leading-relaxed mb-10 max-w-md font-light">
+                        Von Hand gegossen. Aus Bienenwachs und Paraffin. In Balingen.
                     </p>
-                    <a href="#vision" class="btn-primary">Unsere Geschichte</a>
+                    
+                    <!-- Tags -->
+                    <div class="flex gap-6 mb-12 text-xs font-medium uppercase tracking-widest text-primary/40">
+                        <span class="border-b border-primary/20 pb-1">Bienenwachs</span>
+                        <span class="border-b border-primary/20 pb-1">Upcycling</span>
+                        <span class="border-b border-primary/20 pb-1">Handarbeit</span>
+                    </div>
+
+                    <a href="#manufaktur" class="btn-primary">Unsere Geschichte</a>
                 </div>
                 
-                <div class="relative fade-up delay-200">
+                <div class="relative reveal delay-100">
                     <!-- Bild im 5:4 Format -->
-                    <div class="aspect-standard rounded-2xl shadow-2xl bg-white p-2">
-                        <img src="https://images.unsplash.com/photo-1602871126344-97e23998223d?auto=format&fit=crop&q=80&w=1200" alt="Handgegossene Kerze" class="rounded-xl">
+                    <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
+                        <img src="https://images.unsplash.com/photo-1602871126344-97e23998223d?auto=format&fit=crop&q=80&w=1200" alt="Handgegossene Bienenwachskerze in der Kerzenküche Balingen">
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- VISION & TEAM -->
-    <section id="vision" class="py-32 bg-paper">
+    <!-- ÜBER UNS / MANUFAKTUR -->
+    <section id="manufaktur" class="py-32 bg-paper">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-24 items-center">
-                <!-- Bild Links -->
-                <div class="order-2 lg:order-1 fade-up">
-                    <div class="aspect-standard rounded-2xl overflow-hidden shadow-lg">
-                        <img src="team.jpg" alt="Armin und Monika">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <!-- Bild Links (5:4) -->
+                <div class="order-2 lg:order-1 reveal">
+                    <div class="aspect-5-4 shadow-lg hover-zoom bg-secondary">
+                        <img src="team.jpg" alt="Armin und Monika beim Kerzengießen in ihrer Werkstatt">
                     </div>
                 </div>
                 
                 <!-- Text Rechts -->
-                <div class="order-1 lg:order-2 fade-up">
-                    <span class="text-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">Die Manufaktur</span>
-                    <h2 class="text-4xl lg:text-5xl mb-8 leading-tight">Vier Hände, <br>eine Leidenschaft.</h2>
-                    <div class="space-y-6 text-gray-600 font-light leading-relaxed text-lg">
+                <div class="order-1 lg:order-2 reveal">
+                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Die Macher</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif mb-8 leading-tight text-primary">Vier Hände, <br>eine Werkstatt.</h2>
+                    <div class="space-y-6 text-textlight font-light leading-relaxed text-lg">
                         <p>
-                            Wir sind Armin und Monika. In einer Zeit der Massenproduktion haben wir uns entschieden, einen Schritt zurückzutreten und Werte zu schaffen, die bleiben.
+                            Wir sind Armin und Monika. In unserer Werkstatt in Balingen gießen wir jede Kerze von Hand.
                         </p>
                         <p>
-                            Die Kerzenküche ist unser Ort der Ruhe. Hier entstehen keine Produkte vom Fließband, sondern Unikate mit Charakter. Wir glauben daran, dass man die Sorgfalt und die Zeit, die in einer Kerze steckt, spüren kann, wenn man sie anzündet.
+                            Keine Fließbandware. Jede Kerze entsteht in Ruhe, mit der Zeit, die sie braucht. Das macht den Unterschied, wenn ihr sie anzündet.
                         </p>
-                    </div>
-                    <div class="mt-10 border-l-2 border-accent pl-6 italic text-gray-500 font-serif text-xl">
-                        „Echtes Handwerk bedeutet für uns, dem Material zuzuhören.“
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HANDWERK & MATERIALIEN -->
-    <section id="handwerk" class="py-32 bg-secondary">
+    <!-- MATERIAL / ROHSTOFFE -->
+    <section id="material" class="py-32 bg-secondary">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-20 fade-up">
-                <span class="text-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-4 block">Materialkunde</span>
-                <h2 class="text-4xl lg:text-5xl mb-6">Ehrliche Rohstoffe.</h2>
-                <p class="text-gray-600 font-light text-lg">
-                    Wir arbeiten mit dem, was die Natur uns gibt und was wir bewahren können.
-                </p>
-            </div>
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Rohstoffe</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif mb-10 text-primary">Ehrliche Materialien.</h2>
+                    <p class="text-textlight font-light text-lg mb-12">
+                        Wir arbeiten mit dem, was die Natur hergibt – und dem, was andere wegwerfen.
+                    </p>
 
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div class="fade-up space-y-12">
-                    <div class="group">
-                        <h3 class="text-2xl font-serif mb-3 group-hover:text-accent transition-colors">Bienen- & Rapswachs</h3>
-                        <p class="text-gray-500 leading-relaxed font-light">
-                            100% reines Bienenwachs betört durch seinen natürlichen Honigduft. Unser Rapswachs ist die vegane, regionale Alternative für ein sauberes, ruhiges Brennverhalten.
-                        </p>
-                    </div>
-                    <div class="w-full h-[1px] bg-gray-200"></div>
-                    <div class="group">
-                        <h3 class="text-2xl font-serif mb-3 group-hover:text-accent transition-colors">Upcycling & Paraffin</h3>
-                        <p class="text-gray-500 leading-relaxed font-light">
-                            Nachhaltigkeit gelebt: Wir sammeln Kerzenreste und gießen daraus neue Lichter. Ergänzend nutzen wir hochwertiges Paraffin für formstabile Designkerzen.
-                        </p>
-                    </div>
-                    <div class="w-full h-[1px] bg-gray-200"></div>
-                    <div class="group">
-                        <h3 class="text-2xl font-serif mb-3 group-hover:text-accent transition-colors">Keraflott & Handarbeit</h3>
-                        <p class="text-gray-500 leading-relaxed font-light">
-                            Jedes Stück – ob Kerze, Untersetzer oder Figur – wird von Hand gegossen. Kleine Unregelmäßigkeiten sind kein Fehler, sondern der Beweis echter Handwerkskunst.
-                        </p>
+                    <div class="space-y-12">
+                        <div>
+                            <h3 class="text-2xl font-serif mb-3 text-primary">Bienen- & Rapswachs</h3>
+                            <p class="text-textlight leading-relaxed font-light">
+                                100% reines Bienenwachs duftet natürlich nach Honig und reinigt die Luft beim Brennen. Rapswachs aus der Region ist die vegane Alternative – brennt sauber, rußfrei und ohne Geruch.
+                            </p>
+                        </div>
+                        <div class="w-full h-[1px] bg-primary/10"></div>
+                        <div>
+                            <h3 class="text-2xl font-serif mb-3 text-primary">Upcycling & Paraffin</h3>
+                            <p class="text-textlight leading-relaxed font-light">
+                                Wir sammeln Kerzenreste und gießen daraus neue Kerzen. Für klare, klassische Formen nutzen wir hochwertiges Paraffin.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="fade-up">
-                    <div class="aspect-standard rounded-2xl shadow-xl overflow-hidden bg-white">
-                        <img src="bienenwachs.jpg" alt="Rohstoffe und Handwerk">
+                <div class="reveal">
+                    <!-- Bild (5:4) -->
+                    <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
+                        <img src="bienenwachs.jpg" alt="Natürliches Bienenwachs und Docht für handgegossene Kerzen">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- KOLLEKTION -->
-    <section id="kollektion" class="py-32 bg-paper">
+    <!-- ANLÄSSE / FESTLICHE KERZEN -->
+    <section id="anlaesse" class="py-32 bg-paper">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-16 fade-up">
-                <div>
-                    <span class="text-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-4 block">Kuratierte Auswahl</span>
-                    <h2 class="text-4xl lg:text-5xl">Unsere Kollektion.</h2>
-                </div>
-                <a href="#kontakt" class="hidden md:inline-block text-xs uppercase tracking-widest border-b border-primary pb-1 hover:text-accent hover:border-accent transition-colors">Alle anfragen</a>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-10">
-                <!-- Card 1 -->
-                <div class="card-hover fade-up">
-                    <div class="aspect-standard rounded-xl overflow-hidden mb-6 bg-secondary">
-                        <img src="bienenwachs.jpg" alt="Bienenwachs Kerze">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <!-- Bild Links (5:4) -->
+                <div class="reveal">
+                    <div class="aspect-5-4 shadow-lg hover-zoom bg-secondary">
+                        <img src="anlass.jpg" alt="Individuelle Taufkerze mit persönlicher Gravur">
                     </div>
-                    <h3 class="text-2xl font-serif mb-2">Natürlich Pur</h3>
-                    <p class="text-gray-500 text-sm font-light mb-4">Reines Bienenwachs, handgedreht oder gegossen.</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card-hover fade-up delay-100">
-                    <div class="aspect-standard rounded-xl overflow-hidden mb-6 bg-secondary">
-                        <img src="anlass.jpg" alt="Festliche Kerze">
-                    </div>
-                    <h3 class="text-2xl font-serif mb-2">Feste & Anlässe</h3>
-                    <p class="text-gray-500 text-sm font-light mb-4">Individuelle Tauf-, Hochzeits- und Jubiläumskerzen.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card-hover fade-up delay-200">
-                    <div class="aspect-standard rounded-xl overflow-hidden mb-6 bg-secondary">
-                        <img src="keraflott.jpg" alt="Keraflott Deko">
-                    </div>
-                    <h3 class="text-2xl font-serif mb-2">Duft & Dekor</h3>
-                    <p class="text-gray-500 text-sm font-light mb-4">Saisonale Duftmelts und edle Keraflott-Elemente.</p>
+                <!-- Text Rechts -->
+                <div class="reveal">
+                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Lebensbegleiter</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif mb-8 text-primary">Kerzen für <br>Meilensteine.</h2>
+                    <p class="text-textlight text-lg font-light leading-relaxed">
+                        Ob Taufe, Hochzeit oder Jubiläum – wir gestalten die Kerze für euren besonderen Tag.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SAMMELSTELLEN & NACHHALTIGKEIT -->
-    <section id="sammelstellen" class="py-32 bg-secondary border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <div class="max-w-3xl mx-auto fade-up">
-                <span class="text-accent uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">Kreislaufwirtschaft</span>
-                <h2 class="text-4xl lg:text-6xl mb-10 font-serif">Wachs ist wertvoll.</h2>
-                <p class="text-xl text-gray-600 font-light mb-16 leading-relaxed">
-                    Wir glauben an ein zweites Leben für Materialien. Bringt eure Kerzenreste zu unseren Sammelstellen – wir reinigen sie und gießen daraus neue Lichtblicke.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-8 text-left">
-                    <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                        <h4 class="font-serif text-2xl mb-4">Atelier Kerzenküche</h4>
-                        <p class="text-sm text-gray-400 uppercase tracking-widest mb-1">Hauptstandort</p>
-                        <p class="text-gray-600">Hebsackstraße 3, 72336 Balingen</p>
+    <!-- DUFT & DESIGN -->
+    <section id="design" class="py-32 bg-secondary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal order-2 lg:order-1">
+                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Atmosphäre</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif mb-10 text-primary">Duft & Design.</h2>
+                    
+                    <div class="space-y-12">
+                        <div class="bg-paper p-8 rounded-lg shadow-sm">
+                            <h3 class="text-2xl font-serif mb-3 text-primary">Duftwachsmelts</h3>
+                            <p class="text-textlight leading-relaxed font-light text-sm">
+                                Passend zur Jahreszeit in verschiedenen Duftnoten. Frische im Frühling, Wärme im Winter.
+                            </p>
+                        </div>
+                        <div class="bg-paper p-8 rounded-lg shadow-sm">
+                            <h3 class="text-2xl font-serif mb-3 text-primary">Keraflott Deko</h3>
+                            <p class="text-textlight leading-relaxed font-light text-sm">
+                                Untersetzer, Teelichthalter und Figuren aus Keramikgießmasse. Schlicht, matt, modern.
+                            </p>
+                        </div>
                     </div>
-                    <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-md transition-shadow opacity-70">
-                        <h4 class="font-serif text-2xl mb-4 text-gray-400">Partner Standort</h4>
-                        <p class="text-sm text-gray-400 uppercase tracking-widest mb-1">Coming Soon</p>
-                        <p class="text-gray-400">Weitere Sammelstellen folgen.</p>
+                </div>
+
+                <div class="reveal order-1 lg:order-2">
+                    <!-- Bild (5:4) -->
+                    <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
+                        <img src="keraflott.jpg" alt="Handgegossene Keraflott Untersetzer und Teelichthalter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMMELSTELLEN / KREISLAUFWIRTSCHAFT -->
+    <section id="sammelstellen" class="py-32 bg-paper">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Gemeinsam Handeln</span>
+                <h2 class="text-4xl lg:text-6xl font-serif mb-8 text-primary">Wachs ist wertvoll.</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-left bg-secondary p-10 md:p-16 rounded-2xl mt-12">
+                    <div>
+                        <h3 class="font-serif text-3xl mb-4 text-primary">Sammelstellen</h3>
+                        <p class="text-textlight font-light mb-8 leading-relaxed">
+                            Kerzenreste? Bringt sie vorbei. <br>Wir gießen daraus etwas Neues.
+                        </p>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest mb-2 text-primary">📍 Atelier Kerzenküche</h4>
+                            <p class="text-textlight">Hebsackstraße 3, 72336 Balingen</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest mb-2 text-primary/50">📍 Weitere Sammelstellen</h4>
+                            <p class="text-textlight/70">Bald verfügbar</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,20 +312,20 @@
     </section>
 
     <!-- KONTAKT -->
-    <section id="kontakt" class="py-32 bg-paper">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center fade-up">
-            <h2 class="text-5xl lg:text-7xl font-serif mb-10">Lass uns sprechen.</h2>
-            <p class="text-lg text-gray-600 font-light mb-16 leading-relaxed">
-                Wir führen keinen anonymen Online-Shop. Uns ist die persönliche Beratung wichtig, damit eure Kerze genau so wird, wie ihr es euch wünscht.
+    <section id="kontakt" class="py-32 bg-primary text-paper text-center">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8 reveal">
+            <h3 class="text-4xl lg:text-5xl font-serif mb-8">Wunschkerze bestellen?</h3>
+            <p class="text-paper/80 text-lg font-light mb-16 leading-relaxed max-w-xl mx-auto">
+                Wir beraten euch persönlich – damit eure Kerze genau so wird, wie ihr sie euch vorstellt.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-8">
-                <a href="https://wa.me/491741941927" class="group flex items-center justify-center gap-4 bg-primary text-white px-8 py-4 rounded-full hover:bg-accent transition-all">
-                    <span>WhatsApp Chat starten</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://wa.me/491741941927" class="group flex items-center justify-center gap-3 bg-paper text-primary px-8 py-4 rounded-full hover:bg-accent hover:text-white transition-all">
+                    <span>WhatsApp</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
-                <a href="mailto:info@kerzenküche.de" class="group flex items-center justify-center gap-4 border border-gray-200 text-primary px-8 py-4 rounded-full hover:border-primary transition-all">
-                    <span>E-Mail schreiben</span>
+                <a href="mailto:info@kerzenküche.de" class="group flex items-center justify-center gap-3 border border-paper/30 text-paper px-8 py-4 rounded-full hover:border-paper transition-all">
+                    <span>E-Mail</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
@@ -304,40 +333,68 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-secondary pt-20 pb-10 border-t border-gray-200">
+    <footer class="bg-paper pt-20 pb-10 border-t border-secondary">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <!-- Links: Info -->
                 <div>
-                    <h3 class="font-serif text-2xl font-bold mb-6 italic">Kerzenküche</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        Handgefertigte Unikate aus Balingen.<br>
-                        Mit Liebe gegossen von Armin & Monika.
+                    <h3 class="font-serif text-2xl font-bold mb-6 text-primary">Kerzenküche</h3>
+                    <p class="text-textlight text-sm leading-relaxed">
+                        Handgegossen in Balingen.<br>
+                        Von Armin & Monika.
                     </p>
                 </div>
+                <!-- Mitte: Kontakt -->
                 <div>
                     <h4 class="uppercase text-xs font-bold tracking-widest mb-6 text-primary">Kontakt</h4>
-                    <ul class="space-y-4 text-sm text-gray-500">
+                    <ul class="space-y-4 text-sm text-textlight">
                         <li>Hebsackstr. 3, 72336 Balingen</li>
                         <li><a href="mailto:info@kerzenküche.de" class="hover:text-primary transition-colors">info@kerzenküche.de</a></li>
                     </ul>
                 </div>
+                <!-- Rechts: Rechtliches -->
                 <div>
                     <h4 class="uppercase text-xs font-bold tracking-widest mb-6 text-primary">Rechtliches</h4>
-                    <ul class="space-y-4 text-sm text-gray-500">
-                        <li><a href="#" onclick="alert('Impressum: Monika Gogoll, Hebsackstr. 3')" class="hover:text-primary transition-colors">Impressum</a></li>
-                        <li><a href="#" onclick="alert('Datenschutz: Wir tracken nichts.')" class="hover:text-primary transition-colors">Datenschutz</a></li>
+                    <ul class="space-y-4 text-sm text-textlight">
+                        <li><button onclick="toggleModal('impressum')" class="hover:text-primary transition-colors">Impressum</button></li>
+                        <li><button onclick="toggleModal('datenschutz')" class="hover:text-primary transition-colors">Datenschutz</button></li>
+                        <li><button onclick="toggleModal('widerruf')" class="hover:text-primary transition-colors">Widerruf</button></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-200 pt-8 flex justify-between items-center text-xs text-gray-400 uppercase tracking-widest">
-                <span>&copy; 2026 Kerzenküche.</span>
-                <span>Made in Balingen</span>
+            <div class="border-t border-secondary pt-8 text-center text-xs text-textlight uppercase tracking-widest">
+                &copy; 2026 Kerzenküche Balingen
             </div>
         </div>
     </footer>
 
+    <!-- MODALS -->
+    <div id="impressum" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
+        <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
+            <button onclick="toggleModal('impressum')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
+            <h3 class="font-serif text-3xl mb-6">Impressum</h3>
+            <p class="text-gray-600 leading-relaxed">Monika Gogoll<br>Hebsackstr. 3, 72336 Balingen<br>info@kerzenküche.de<br><br>Kleinunternehmer §19 UStG.</p>
+        </div>
+    </div>
+    
+    <div id="datenschutz" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
+        <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
+            <button onclick="toggleModal('datenschutz')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
+            <h3 class="font-serif text-3xl mb-6">Datenschutz</h3>
+            <p class="text-gray-600 leading-relaxed">Keine Cookies. Daten nur zur Kontaktaufnahme.</p>
+        </div>
+    </div>
+    
+    <div id="widerruf" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
+        <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
+            <button onclick="toggleModal('widerruf')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
+            <h3 class="font-serif text-3xl mb-6">Widerruf</h3>
+            <p class="text-gray-600 leading-relaxed">14 Tage Widerrufsrecht. Ausschluss bei personalisierter Ware.</p>
+        </div>
+    </div>
+
     <script>
-        // Reveal Animation on Scroll
+        // Scroll Animation Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -346,326 +403,21 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    </script>
-</body>
-</html>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kerzenküche Balingen – Handgefertigte Kerzen von Armin & Monika. Bienenwachs, Rapswachs & Upcycling. Sammelstellen für Kerzenreste.">
-    <title>Kerzenküche Balingen | Armin & Monika</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:300,400,500,600|cormorant-garamond:400,400i,500,600,700" rel="stylesheet" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'canvas': '#FFFEFC',   /* Fast reines Weiß, ganz warm */
-                        'taupe': '#635852',    /* Sanftes Warmgrau für Text (statt Schwarz) */
-                        'sand': '#F2EFE9',     /* Sehr helles Beige für Hintergründe */
-                        'gold': '#D9B991',     /* Weiches, helles Gold */
-                        'clay': '#D4A58E',     /* Helles, freundliches Terracotta */
-                    },
-                    fontFamily: {
-                        'display': ['"Cormorant Garamond"', 'serif'],
-                        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
-                    }
-                }
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Modal Logic
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
             }
         }
     </script>
-    
-    <style>
-        body { 
-            background-color: #FFFEFC; 
-            color: #635852; 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            overflow-x: hidden; 
-        }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
-        
-        .fade-in { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* Helle Körnung */
-        .grain {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 99; opacity: 0.02;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
-
-        /* 5:4 Format - Helle Schatten */
-        .media-standard {
-            aspect-ratio: 5 / 4;
-            overflow: hidden;
-            border-radius: 1.5rem;
-            position: relative;
-            background-color: #F2EFE9;
-            box-shadow: 0 10px 30px -10px rgba(99, 88, 82, 0.05); /* Sehr zarter Schatten */
-        }
-        
-        .media-standard img, .media-standard video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            transition: transform 1.8s ease;
-        }
-        
-        .media-standard:hover img { transform: scale(1.02); }
-
-        .nav-link { position: relative; font-weight: 500; letter-spacing: 0.05em; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: #D4A58E; transition: width 0.4s ease; }
-        .nav-link:hover::after { width: 100%; }
-        
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #FFFEFC; }
-        ::-webkit-scrollbar-thumb { background: #F2EFE9; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #D4A58E; }
-    </style>
-</head>
-
-<body class="antialiased selection:bg-sand selection:text-taupe">
-    <div class="grain"></div>
-
-    <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center transition-all duration-500 bg-canvas/90 backdrop-blur-md border-b border-taupe/5">
-        <a href="#" class="font-display text-2xl font-bold tracking-tight italic text-taupe">Kerzenküche</a>
-        <div class="hidden lg:flex gap-12 text-[11px] uppercase tracking-[0.2em] font-medium text-taupe/60">
-            <a href="#ueber-uns" class="nav-link">Manufaktur</a>
-            <a href="#material" class="nav-link">Material</a>
-            <a href="#anlaesse" class="nav-link">Anlässe</a>
-            <a href="#sammelstellen" class="nav-link">Sammelstellen</a>
-        </div>
-        <a href="https://wa.me/491741941927" class="text-[11px] uppercase tracking-widest border border-taupe/10 text-taupe px-6 py-2 rounded-full hover:bg-sand hover:border-sand transition-all duration-300">Kontakt</a>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="min-h-screen pt-32 pb-20 px-6 md:px-24 flex flex-col justify-center">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="fade-in">
-                <span class="text-[11px] uppercase tracking-[0.4em] text-clay mb-6 block font-bold">Armin & Monika</span>
-                
-                <h1 class="font-display text-6xl md:text-8xl leading-[1.0] mb-8 tracking-tight text-taupe">
-                    Momente aus der <br> <span class="italic text-gold">Kerzenküche.</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl font-light leading-relaxed text-taupe/80 mb-12 max-w-lg">
-                    Handgegossene Kerzen aus echtem Bienenwachs und hochwertigem Paraffin. Jede Kerze erzählt ihre eigene Geschichte – mit Liebe gefertigt, einzigartig duftend.
-                </p>
-                
-                <div class="flex flex-wrap gap-4 text-xs font-medium text-taupe/40 uppercase tracking-widest">
-                    <span class="border-b border-sand pb-1">Bienenwachs</span>
-                    <span class="border-b border-sand pb-1">Upcycling</span>
-                    <span class="border-b border-sand pb-1">Keraflott</span>
-                </div>
-            </div>
-            
-            <div class="fade-in delay-200 w-full md:w-4/5 lg:w-full mx-auto">
-                <div class="media-standard">
-                    <!-- Platzhalter Bild (Helles Motiv) -->
-                    <img src="https://images.unsplash.com/photo-1602871126344-97e23998223d?auto=format&fit=crop&q=80&w=1500" alt="Handgefertigte Kerze">
-                    
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <span class="bg-canvas/80 px-4 py-2 text-[10px] uppercase tracking-widest text-taupe/50 backdrop-blur-sm rounded-full shadow-sm">
-                            Bild/Video (1500x1200px)
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- ÜBER UNS -->
-    <section id="ueber-uns" class="py-32 px-6 md:px-24 bg-sand/30">
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <div class="fade-in order-2 lg:order-1">
-                <div class="media-standard">
-                    <img src="team.jpg" alt="Armin und Monika">
-                </div>
-            </div>
-
-            <div class="fade-in order-1 lg:order-2">
-                <span class="text-[11px] uppercase tracking-[0.4em] text-clay mb-6 block font-bold">Die Macher</span>
-                <h2 class="font-display text-5xl mb-8 text-taupe">Vier Hände, <br>eine Leidenschaft.</h2>
-                <div class="space-y-6 text-lg font-light text-taupe/80 leading-relaxed">
-                    <p>
-                        Wir sind Armin und Monika. In unserer Balinger Werkstatt verbinden wir traditionelles Handwerk mit dem Wunsch nach Nachhaltigkeit.
-                    </p>
-                    <p>
-                        Jede Kerze wird von uns persönlich gegossen. Vom Schmelzen des Wachses bis zum finalen Schliff – bei uns gibt es keine Maschinenstraße, sondern echte Handarbeit.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MATERIAL & NACHHALTIGKEIT -->
-    <section id="material" class="py-32 px-6 md:px-24">
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <div class="fade-in">
-                <span class="text-[11px] uppercase tracking-[0.4em] text-gold mb-6 block font-bold">Rohstoffe</span>
-                <h2 class="font-display text-5xl mb-8 text-taupe">Natürlich & <br>Nachhaltig.</h2>
-                <div class="space-y-10">
-                    <div class="pl-6 border-l border-sand">
-                        <h3 class="font-display text-2xl mb-2 italic text-taupe">Bienen- & Rapswachs</h3>
-                        <p class="text-taupe/70 font-light">
-                            Wir verwenden 100% reines Bienenwachs für seinen unvergleichlichen Duft und regionales Rapswachs für ein besonders sauberes Brennerlebnis.
-                        </p>
-                    </div>
-                    <div class="pl-6 border-l border-sand">
-                        <h3 class="font-display text-2xl mb-2 italic text-taupe">Upcycling & Paraffin</h3>
-                        <p class="text-taupe/70 font-light">
-                            Aus gesammelten Kerzenresten gießen wir nachhaltig neue Unikate. Ergänzend nutzen wir hochwertiges Paraffin für klare, klassische Formen.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fade-in">
-                <div class="media-standard">
-                    <img src="bienenwachs.jpg" alt="Bienenwachs Platten und Docht">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ANLÄSSE -->
-    <section id="anlaesse" class="py-32 px-6 md:px-24 bg-sand/50">
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <div class="fade-in order-2 lg:order-1">
-                <div class="media-standard bg-white">
-                    <img src="anlass.jpg" alt="Festliche Kerze">
-                </div>
-            </div>
-
-            <div class="fade-in order-1 lg:order-2">
-                <span class="text-[11px] uppercase tracking-[0.4em] text-clay mb-6 block font-bold">Lebensbegleiter</span>
-                <h2 class="font-display text-5xl mb-8 text-taupe">Kerzen für <br>Meilensteine.</h2>
-                <p class="text-xl font-light opacity-80 mb-10 leading-relaxed text-taupe/90">
-                    Ob Taufe, Kommunion, Hochzeit oder Jubiläum – wir gestalten die passende Kerze für euren großen Tag. 
-                </p>
-                <ul class="space-y-4 font-display text-2xl italic opacity-70 text-gold">
-                    <li>— Kirchliche Feste</li>
-                    <li>— Familienfeiern</li>
-                    <li>— Jahresfeste & Jubiläen</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SAISONALES & DEKO -->
-    <section id="keraflott" class="py-32 px-6 md:px-24">
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <div class="fade-in">
-                <span class="text-[11px] uppercase tracking-[0.4em] text-gold mb-6 block font-bold">Atmosphäre</span>
-                <h2 class="font-display text-5xl mb-8 text-taupe">Duft & Design.</h2>
-                <div class="space-y-8">
-                    <div class="p-8 bg-sand/30 rounded-3xl">
-                        <h3 class="font-display text-2xl mb-2 text-taupe">Duftwachsmelts</h3>
-                        <p class="text-taupe/70 font-light text-sm">
-                            Passend zur Jahreszeit gießen wir Melts in verschiedenen Duftnoten. Für Frische im Frühling oder Wärme im Winter.
-                        </p>
-                    </div>
-                    <div class="p-8 bg-sand/30 rounded-3xl">
-                        <h3 class="font-display text-2xl mb-2 text-taupe">Keraflott Deko</h3>
-                        <p class="text-taupe/70 font-light text-sm">
-                            Handgegossene Untersetzer, Teelichthalter und Figuren aus hochwertiger Keramikgießmasse. Schlicht, matt und modern.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fade-in">
-                <div class="media-standard">
-                    <img src="keraflott.jpg" alt="Keraflott und Duftmelts Arrangement">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SAMMELSTELLEN & KONTAKT -->
-    <section id="sammelstellen" class="py-40 px-6 text-center bg-gradient-to-b from-canvas to-sand/40">
-        <div class="max-w-4xl mx-auto fade-in">
-            <span class="text-[11px] uppercase tracking-[0.4em] text-clay mb-6 block font-bold">Gemeinsam Handeln</span>
-            <h2 class="font-display text-6xl md:text-7xl mb-12 text-taupe">Wachsreste & Wünsche.</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 text-left mb-20">
-                <div class="bg-white p-12 rounded-[2rem] shadow-sm border border-sand">
-                    <h3 class="font-display text-2xl mb-4 italic text-taupe">Sammelstellen</h3>
-                    <p class="text-sm text-taupe/60 mb-8 leading-relaxed">Bringt eure Kerzenreste vorbei. Wir machen daraus Neues.</p>
-                    <ul class="text-xs uppercase tracking-widest space-y-4 font-semibold text-taupe/80">
-                        <li class="flex items-center gap-3"><span class="text-clay text-lg">📍</span> Atelier Kerzenküche, Balingen</li>
-                        <li class="flex items-center gap-3"><span class="text-clay text-lg">📍</span> Partner A (Bald verfügbar)</li>
-                    </ul>
-                </div>
-                <div class="bg-sand p-12 rounded-[2rem] shadow-sm">
-                    <h3 class="font-display text-2xl mb-4 italic text-taupe">Kontakt aufnehmen</h3>
-                    <p class="text-sm text-taupe/60 mb-8 leading-relaxed">Wir beraten euch persönlich zu eurer Wunschkerze.</p>
-                    <div class="flex flex-col gap-4">
-                        <a href="https://wa.me/491741941927" class="flex items-center justify-between border-b border-taupe/10 pb-3 hover:pl-2 transition-all group text-taupe">
-                            <span>WhatsApp</span> <span class="group-hover:text-clay transition-colors">→</span>
-                        </a>
-                        <a href="mailto:info@kerzenküche.de" class="flex items-center justify-between border-b border-taupe/10 pb-3 hover:pl-2 transition-all group text-taupe">
-                            <span>E-Mail</span> <span class="group-hover:text-clay transition-colors">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-12 px-8 border-t border-taupe/5 text-taupe/50 text-[10px] uppercase tracking-[0.2em] flex flex-col md:flex-row justify-between items-center gap-6 bg-canvas">
-        <span>© 2026 Kerzenküche Balingen</span>
-        <div class="flex gap-8 font-semibold">
-            <button onclick="toggleModal('impressum')" class="hover:text-clay transition-colors">Impressum</button>
-            <button onclick="toggleModal('datenschutz')" class="hover:text-clay transition-colors">Datenschutz</button>
-            <button onclick="toggleModal('widerruf')" class="hover:text-clay transition-colors">Widerruf</button>
-        </div>
-    </footer>
-
-    <!-- MODALS -->
-    <div id="impressum" class="fixed inset-0 z-[200] hidden bg-taupe/10 backdrop-blur-md flex items-center justify-center p-8">
-        <div class="bg-canvas max-w-xl w-full p-12 rounded-3xl relative text-taupe shadow-2xl border border-white">
-            <button onclick="toggleModal('impressum')" class="absolute top-8 right-8 text-xl text-taupe/40 hover:text-clay transition-colors">✕</button>
-            <h2 class="font-display text-3xl mb-6">Impressum</h2>
-            <p class="font-light text-taupe/80 leading-relaxed">Monika Gogoll<br>Hebsackstr. 3, 72336 Balingen<br>info@kerzenküche.de<br><br>Kleinunternehmer §19 UStG.</p>
-        </div>
-    </div>
-    <div id="datenschutz" class="fixed inset-0 z-[200] hidden bg-taupe/10 backdrop-blur-md flex items-center justify-center p-8">
-        <div class="bg-canvas max-w-xl w-full p-12 rounded-3xl relative text-taupe shadow-2xl border border-white">
-            <button onclick="toggleModal('datenschutz')" class="absolute top-8 right-8 text-xl text-taupe/40 hover:text-clay transition-colors">✕</button>
-            <h2 class="font-display text-3xl mb-6">Datenschutz</h2>
-            <p class="font-light text-taupe/80 leading-relaxed">Keine Cookies. Daten nur zur Kontaktaufnahme.</p>
-        </div>
-    </div>
-    <div id="widerruf" class="fixed inset-0 z-[200] hidden bg-taupe/10 backdrop-blur-md flex items-center justify-center p-8">
-        <div class="bg-canvas max-w-xl w-full p-12 rounded-3xl relative text-taupe shadow-2xl border border-white">
-            <button onclick="toggleModal('widerruf')" class="absolute top-8 right-8 text-xl text-taupe/40 hover:text-clay transition-colors">✕</button>
-            <h2 class="font-display text-3xl mb-6">Widerruf</h2>
-            <p class="font-light text-taupe/80 leading-relaxed">14 Tage Widerrufsrecht. Ausschluss bei personalisierter Ware.</p>
-        </div>
-    </div>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        function toggleModal(id) {
-            const m = document.getElementById(id);
-            m.classList.toggle('hidden');
-        }
-    </script>
 </body>
-
 </html>
+
+
