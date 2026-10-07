@@ -35,6 +35,37 @@
         });
     }
 
+    // ---------- Schwebender WhatsApp-Button ----------
+    // Übernimmt die vorausgefüllte Nachricht aus dem Kontaktbereich der jeweiligen Seite.
+    var kontakt = document.getElementById('kontakt');
+    var waLink = kontakt && kontakt.querySelector('a[href*="wa.me"]');
+    if (waLink) {
+        var fab = document.createElement('a');
+        fab.className = 'wa-fab';
+        fab.href = waLink.href;
+        fab.target = '_blank';
+        fab.rel = 'noopener';
+        fab.setAttribute('aria-label', 'Per WhatsApp anfragen');
+        fab.innerHTML = waLink.querySelector('svg').outerHTML + '<span>Anfragen</span>';
+        document.body.appendChild(fab);
+
+        var kontaktSichtbar = false;
+        function updateFab() {
+            var zeigen = window.scrollY > 400 && !kontaktSichtbar &&
+                !(header && header.classList.contains('menu-open'));
+            fab.classList.toggle('is-visible', zeigen);
+        }
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                kontaktSichtbar = entries[0].isIntersecting;
+                updateFab();
+            }).observe(kontakt);
+        }
+        window.addEventListener('scroll', updateFab, { passive: true });
+        if (toggle) toggle.addEventListener('click', updateFab);
+        updateFab();
+    }
+
     // ---------- Galerie ----------
     var BILDER = window.GALERIE || [];
     var ANLAESSE = {
