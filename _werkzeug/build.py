@@ -203,7 +203,6 @@ def footer(gallery=False):
                         <li><a href="/#manufaktur">Manufaktur</a></li>
                         <li><a href="/#material">Material</a></li>
                         <li><a href="/#sammelstellen">Sammelstellen</a></li>
-                        <li><a href="/ratgeber/taufsprueche/">Taufsprüche</a></li>
                     </ul>
                 </nav>
             </div>
@@ -342,8 +341,8 @@ FAQ_HOME = [
      "Das hängt von Größe, Wachs und Aufwand der Gestaltung ab. Schreibt uns eure Wünsche – ihr bekommt ein unverbindliches Angebot, bevor wir loslegen."),
     ("Wie früh sollte ich bestellen?",
      "Am besten einige Wochen vor eurem Termin, damit genug Zeit für Absprache und Handarbeit bleibt. Es ist knapp? Fragt trotzdem – wir sagen euch ehrlich, ob es klappt."),
-    ("Kann ich ein eigenes Motiv mitbringen?",
-     "Sehr gern. Schickt uns ein Foto, eine Skizze oder z. B. die Einladungskarte – wir greifen Motiv und Farben auf."),
+    ("Ich habe schon eine Idee. Kann ich euch Fotos schicken?",
+     "Gerne! Schickt uns Fotos von Kerzen oder Motiven, die euch gefallen – wir sagen euch, was sich umsetzen lässt."),
 ]
 
 index = head(
@@ -381,14 +380,14 @@ index = head(
                 <div class="section-head reveal">
                     <span class="eyebrow">Lebensbegleiter</span>
                     <h2 class="title">Kerzen für Meilensteine.</h2>
-                    <p class="muted text-light">Jede Kerze gestalten wir einzeln – mit Namen, Datum, Spruch und Motiv, ganz nach euren Wünschen.</p>
+                    <p class="muted text-light">Jede Kerze gestalten wir einzeln – mit Namen, Datum und Verzierungen, ganz nach euren Wünschen.</p>
                 </div>
                 <div class="cards">
                     <a href="/taufkerzen/" class="card reveal">
                         <div class="media"><img src="/galerie/bilder/taufkerzen-blau-kreuz-lebensbaum.jpg" width="1600" height="1600" loading="lazy" alt="Drei persönlich gestaltete Taufkerzen in Blau mit Kreuz und Lebensbaum"></div>
                         <div class="card-body">
                             <h3>Taufkerzen</h3>
-                            <p>Mit Name, Taufdatum, Taufspruch und Symbolen – eine Kerze, die ein Leben lang begleitet.</p>
+                            <p>Mit Name, Taufdatum und Symbolen wie Kreuz, Taube oder Lebensbaum – eine Kerze, die ein Leben lang begleitet.</p>
                             <span class="link-arrow">Mehr erfahren</span>
                         </div>
                     </a>
@@ -396,7 +395,7 @@ index = head(
                         <div class="media"><img src="/galerie/bilder/kommunionkerzen-collage.jpg" width="1500" height="1200" loading="lazy" alt="Drei individuell gestaltete Kommunionkerzen"></div>
                         <div class="card-body">
                             <h3>Kommunion &amp; Konfirmation</h3>
-                            <p>Passend zu Kind, Gemeinde und Motto – auf Wunsch nach den Vorgaben eurer Gemeinde.</p>
+                            <p>Schlank und festlich – mit Namen, Datum und Symbolen wie Kelch, Kreuz und Fisch.</p>
                             <span class="link-arrow">Mehr erfahren</span>
                         </div>
                     </a>
@@ -428,7 +427,7 @@ index = head(
                         <div class="card-body">
                             <span class="eyebrow">Eure Idee</span>
                             <h3>Und alles andere.</h3>
-                            <p>Einschulung, Firmenfeier, Deko- und Formkerzen oder ein ganz eigener Anlass – erzählt uns eure Idee, wir machen eine Kerze daraus.</p>
+                            <p>Deko- und Formkerzen oder ein ganz eigener Anlass – erzählt uns eure Idee, wir sagen euch, was möglich ist.</p>
                             <span class="link-arrow">Idee schicken</span>
                         </div>
                     </a>
@@ -575,105 +574,96 @@ PAGES = [
     dict(
         slug="taufkerzen", key="taufe", name="Taufkerzen",
         title="Taufkerze individuell gestalten in Balingen | Kerzenküche",
-        desc="Persönliche Taufkerzen mit Name, Taufdatum und Taufspruch – handgefertigt in Balingen für den ganzen Zollernalbkreis. Jetzt Wunschkerze anfragen.",
+        desc="Persönliche Taufkerzen mit Name, Taufdatum und Symbolen wie Kreuz, Taube oder Lebensbaum – handgefertigt in Balingen für den ganzen Zollernalbkreis.",
         eyebrow="Taufe",
-        h1="Taufkerzen mit <em>Namen &amp; Taufspruch.</em>",
+        h1="Taufkerzen mit <em>Namen &amp; Datum.</em>",
         intro="Die Taufkerze begleitet ein ganzes Leben – zur Erstkommunion oder Konfirmation, zur Hochzeit und an jedem Tauftag. Deshalb gestalten wir jede Taufkerze einzeln, genau für euer Kind.",
         img=("/galerie/bilder/taufkerzen-blau-kreuz-lebensbaum.jpg", 1600, 1600, "Persönlich gestaltete Taufkerzen aus der Kerzenküche Balingen"),
         options=[
-            ("Name &amp; Taufdatum", "Vorname, auf Wunsch mit Geburts- und Taufdatum."),
-            ("Taufspruch", "Euer Taufspruch, ein Bibelvers oder ein paar persönliche Worte."),
-            ("Symbole", "Kreuz, Taube, Fisch, Regenbogen, Lebensbaum, Arche – oder euer eigenes Motiv."),
-            ("Farben", "Passend zur Taufkleidung, zur Einladung oder zur Deko eurer Feier."),
-            ("Form &amp; Größe", "Klassisch hoch, oval oder schlank – gerne auch passend zu eurem Kerzenständer."),
+            ("Name &amp; Datum", "Der Name eures Kindes, auf Wunsch mit Geburts- und Taufdatum."),
+            ("„Zur Taufe“", "Der klassische Schriftzug in Silber."),
+            ("Symbole", "Kreuz, Taube, Fisch, Lebensbaum, Alpha &amp; Omega, Engel, Herz, Schmetterling oder Babyfüßchen."),
+            ("Farben", "Zartes Rosa, kräftiges Blau oder Grün – mit Silber und kleinen Glitzersteinen."),
+            ("Band &amp; Spitze", "Ein Zierband oder eine Spitzenborte rund um die Kerze."),
             ("Material", "Wir beraten euch, welches Wachs zu eurer Kerze passt."),
         ],
-        note="Die Taufkerze wird bei der Taufe traditionell an der Osterkerze entzündet. Viele Familien zünden sie später an jedem Tauftag wieder an – eine schöne Erinnerung. Noch auf der Suche nach dem passenden Spruch? <a href=\"/ratgeber/taufsprueche/\">Ideen für euren Taufspruch</a>",
+        note="Die Taufkerze wird bei der Taufe traditionell an der Osterkerze entzündet. Viele Familien zünden sie später an jedem Tauftag wieder an – eine schöne Erinnerung.",
         faq=[
             ("Wie früh sollten wir die Taufkerze bestellen?",
              "Am besten einige Wochen vor der Taufe, damit genug Zeit für Absprache und Handarbeit bleibt. Wenn es knapp wird: Fragt trotzdem – wir sagen euch ehrlich, ob es bis zu eurem Termin klappt."),
             ("Was kostet eine Taufkerze?",
              "Der Preis hängt von Größe, Wachs und Aufwand der Verzierung ab. Schreibt uns eure Wünsche, dann bekommt ihr ein unverbindliches Angebot."),
-            ("Können wir ein eigenes Motiv mitbringen?",
-             "Sehr gern! Schickt uns ein Foto oder eine Skizze – zum Beispiel das Motiv eurer Einladungskarte."),
+            ("Wir haben schon eine Idee. Können wir euch Fotos schicken?",
+             "Gerne! Schickt uns Fotos von Kerzen oder Motiven, die euch gefallen – wir sagen euch, was sich umsetzen lässt."),
             ("Was brauchen wir für die Anfrage?",
-             "Den Namen eures Kindes, das Taufdatum, ggf. den Taufspruch und eure Ideen zu Farben und Motiv. Alles Weitere besprechen wir gemeinsam."),
+             "Den Namen eures Kindes, das Taufdatum und eure Wünsche zu Farben und Symbolen. Alles Weitere besprechen wir gemeinsam."),
         ],
-        wa="Hallo Monika und Armin, ich interessiere mich für eine Taufkerze.\n\nName des Kindes:\nTauftermin:\nTaufspruch:\nWunschfarben/Motiv:",
+        wa="Hallo Monika und Armin, ich interessiere mich für eine Taufkerze.\n\nName des Kindes:\nTauftermin:\nWunschfarben/Symbole:",
         cta_title="Eure Taufkerze anfragen",
     ),
     dict(
         slug="kommunion-konfirmation", key="kommunion", name="Kommunion & Konfirmation",
         title="Kommunionkerzen & Konfirmationskerzen in Balingen | Kerzenküche",
-        desc="Individuelle Kommunionkerzen und Konfirmationskerzen mit Name, Datum und Symbolen – handgefertigt in Balingen, gern nach den Vorgaben eurer Gemeinde.",
+        desc="Individuelle Kommunionkerzen und Konfirmationskerzen mit Name, Datum und Symbolen wie Kelch, Kreuz und Fisch – handgefertigt in Balingen.",
         eyebrow="Kommunion &amp; Konfirmation",
         h1="Kerzen zur Kommunion <em>&amp; Konfirmation.</em>",
-        intro="Zur Erstkommunion oder Konfirmation gehört eine eigene Kerze. Wir gestalten sie passend zu eurem Kind, zur Gemeinde und zum Motto des Festes – mit Namen, Datum und Symbolen.",
+        intro="Zur Erstkommunion oder Konfirmation gehört eine eigene Kerze. Wir gestalten sie für euer Kind – mit Namen, Datum und christlichen Symbolen.",
         img=("/galerie/bilder/kommunionkerzen-collage.jpg", 1500, 1200, "Individuell gestaltete Kommunionkerzen aus der Kerzenküche Balingen"),
         options=[
-            ("Name &amp; Datum", "Vorname und Datum des Festes, auf Wunsch mit Ort oder Kirche."),
-            ("Motto der Gemeinde", "Viele Gemeinden haben ein Jahresmotto – wir setzen es auf der Kerze um."),
-            ("Symbole", "Kelch und Hostie, Brot, Fisch, Kreuz, Taube, Weinrebe, Regenbogen …"),
-            ("Farben", "Passend zum Fest, zur Kleidung oder zur Tischdeko."),
-            ("Größe nach Vorgabe", "Gibt eure Gemeinde eine Kerzengröße vor? Wir richten uns danach."),
-            ("Mehrere Kerzen", "Für Geschwister, Paten oder die Tischdeko – sprecht uns an."),
+            ("Name &amp; Datum", "Der Name eures Kindes und das Datum des Festes."),
+            ("Schriftzug", "Zum Beispiel „Zur Kommunion“ oder „Holy Communion“."),
+            ("Symbole", "Kelch, Kreuz, Fische, Alpha &amp; Omega, Taube, Herzen oder Wellen."),
+            ("Rosen &amp; Steine", "Kleine Rosen und glitzernde Steine als Verzierung."),
+            ("Farben", "Von Blau und Grün bis Rosa und Lila – gern auch in Regenbogenfarben."),
+            ("Schlanke Form", "Die klassisch hohe, schlanke Kommunionkerze – auf Wunsch mit Tropfschutz."),
         ],
-        note="Ihr möchtet für eine ganze Kommunion- oder Konfirmandengruppe einheitliche Kerzen? Meldet euch möglichst früh, dann planen wir das gemeinsam.",
+        note="Eure Gemeinde gibt eine Kerzengröße oder ein Motiv vor? Sagt es uns bei der Anfrage – wir sagen euch, was möglich ist.",
         faq=[
             ("Wann sollten wir bestellen?",
-             "Kommunion und Konfirmation sind meist im Frühjahr – dann ist bei uns viel los. Am besten fragt ihr schon zu Jahresbeginn an."),
-            ("Unsere Gemeinde hat Vorgaben. Geht das?",
-             "Ja. Sagt uns Größe, Motto oder Motiv eurer Gemeinde, und wir gestalten die Kerze danach."),
+             "Kommunion und Konfirmation sind meist im Frühjahr. Am besten fragt ihr frühzeitig an, damit genug Zeit für Absprache und Handarbeit bleibt."),
             ("Was kostet eine Kommunion- oder Konfirmationskerze?",
              "Das hängt von Größe, Wachs und Verzierung ab. Ihr bekommt von uns vorab ein unverbindliches Angebot."),
-            ("Könnt ihr die Taufkerze aufgreifen?",
-             "Gern – bringt ein Foto der Taufkerze mit, dann nehmen wir Motive oder Farben wieder auf."),
+            ("Wir haben schon eine Idee. Können wir euch Fotos schicken?",
+             "Gerne! Schickt uns Fotos von Kerzen oder Motiven, die euch gefallen – wir sagen euch, was sich umsetzen lässt."),
         ],
-        wa="Hallo Monika und Armin, ich interessiere mich für eine Kerze zur Kommunion/Konfirmation.\n\nName:\nDatum des Festes:\nGemeinde/Motto:\nWunschfarben/Motiv:",
+        wa="Hallo Monika und Armin, ich interessiere mich für eine Kerze zur Kommunion/Konfirmation.\n\nName:\nDatum des Festes:\nWunschfarben/Symbole:",
         cta_title="Kerze zur Kommunion oder Konfirmation anfragen",
     ),
     dict(
         slug="hochzeitskerzen", key="hochzeit", name="Hochzeitskerzen",
         title="Hochzeitskerze mit Namen in Balingen gestalten | Kerzenküche",
-        desc="Persönliche Hochzeitskerzen mit Namen, Hochzeitsdatum und Trauspruch – von Hand gegossen und gestaltet in Balingen. Jetzt unverbindlich anfragen.",
+        desc="Persönliche Hochzeitskerzen mit euren Namen und eurem Hochzeitsdatum – von Hand gegossen und gestaltet in Balingen. Jetzt unverbindlich anfragen.",
         eyebrow="Hochzeit",
         h1="Hochzeitskerzen <em>mit euren Namen.</em>",
-        intro="Eure Hochzeitskerze brennt bei der Trauung – und danach an jedem Hochzeitstag. Wir gestalten sie mit euren Namen, eurem Datum und dem, was euch verbindet.",
+        intro="Eure Hochzeitskerze brennt bei der Trauung – und danach an jedem Hochzeitstag. Wir gestalten sie mit euren Namen und eurem Datum.",
         img=("/galerie/bilder/windlicht-gepresste-blueten.jpg", 1600, 1600, "Windlicht aus Wachs mit gepressten Blüten"),
         options=[
-            ("Namen &amp; Datum", "Eure Vornamen und das Hochzeitsdatum – klassisch oder modern gesetzt."),
-            ("Trauspruch", "Euer Trauspruch oder ein Satz, der zu euch passt."),
-            ("Motive", "Ringe, Herzen, Initialen, Blüten, Kreuz – oder euer eigenes Motiv."),
-            ("Farben", "Abgestimmt auf Blumen, Einladung und Deko eurer Hochzeit."),
-            ("Standesamt &amp; Kirche", "Für die kirchliche Trauung, das Standesamt oder die freie Trauung."),
-            ("Kleine Begleiter", "Passende kleine Kerzen für Tische oder als Gastgeschenk? Fragt uns."),
+            ("Namen &amp; Datum", "Eure Vornamen und euer Hochzeitsdatum."),
+            ("Verzierung", "Herzen, Blüten, Ranken oder ein Kreuz."),
+            ("Farben", "Schlichtes Weiß mit Silber oder Gold – oder in euren Farben."),
+            ("Für jede Trauung", "Für die kirchliche Trauung, das Standesamt oder die freie Trauung."),
         ],
-        note="Tipp: Schickt uns ein Foto eurer Einladungskarte oder eures Brautstraußes – dann passt die Kerze perfekt zum Gesamtbild.",
+        note="Ihr habt schon eine Vorstellung? Schickt uns gern Fotos von Ideen, die euch gefallen – wir sagen euch, was sich umsetzen lässt.",
         faq=[
             ("Wie früh sollten wir die Hochzeitskerze bestellen?",
-             "Am besten einige Wochen vor der Hochzeit. Dann bleibt in Ruhe Zeit für den Entwurf – und ihr habt einen Punkt weniger auf der Liste."),
+             "Am besten einige Wochen vor der Hochzeit. Dann bleibt in Ruhe Zeit für die Absprache – und ihr habt einen Punkt weniger auf der Liste."),
             ("Was kostet eine Hochzeitskerze?",
              "Das hängt von Größe, Wachs und Gestaltung ab. Erzählt uns eure Wünsche, ihr bekommt ein unverbindliches Angebot."),
-            ("Könnt ihr die Kerze an unsere Deko anpassen?",
-             "Ja, sehr gern. Fotos von Einladung, Blumen oder Stoffen helfen uns, die Farben genau zu treffen."),
-            ("Macht ihr auch Kerzen zur Silberhochzeit oder goldenen Hochzeit?",
-             "Natürlich – auch für Hochzeitsjubiläen gestalten wir persönliche Kerzen."),
         ],
-        wa="Hallo Monika und Armin, wir interessieren uns für eine Hochzeitskerze.\n\nNamen:\nHochzeitsdatum:\nTrauspruch:\nFarben/Deko:",
+        wa="Hallo Monika und Armin, wir interessieren uns für eine Hochzeitskerze.\n\nNamen:\nHochzeitsdatum:\nWunschfarben:",
         cta_title="Eure Hochzeitskerze anfragen",
     ),
     dict(
         slug="trauerkerzen", key="trauer", name="Trauer & Gedenken",
         title="Trauerkerzen & Gedenkkerzen in Balingen | Kerzenküche",
-        desc="Persönliche Trauerkerzen und Gedenkkerzen mit Name, Lebensdaten und Spruch – behutsam von Hand gestaltet in Balingen für die Trauerfeier oder das Zuhause.",
+        desc="Persönliche Trauerkerzen und Gedenkkerzen mit Name und Lebensdaten – behutsam von Hand gestaltet in Balingen für die Trauerfeier oder das Zuhause.",
         eyebrow="Trauer &amp; Gedenken",
         h1="Kerzen, die <em>erinnern.</em>",
         intro="Eine Kerze kann Trost spenden und an einen geliebten Menschen erinnern. Wir gestalten Trauer- und Gedenkkerzen behutsam und persönlich – für die Trauerfeier, das Grab oder einen Platz im Zuhause.",
         img=("/galerie/bilder/kerze-herz-haende-quer.jpg", 1500, 1200, "Kerze „Herz in Händen“ in warmem Apricot"),
         options=[
             ("Name &amp; Lebensdaten", "Name, Geburts- und Sterbedatum."),
-            ("Spruch", "Ein Trauerspruch, ein Bibelvers oder ein Satz, der an den Menschen erinnert."),
-            ("Symbole", "Kreuz, Engel, Baum, Rose, Herz, Schmetterling – oder ein persönliches Motiv."),
+            ("Symbole", "Kreuz, Engel, Lebensbaum, Rosen, Herz oder Schmetterling."),
             ("Farben", "Schlicht und ruhig – oder in den Lieblingsfarben des Verstorbenen."),
             ("Für die Trauerfeier", "Als Kerze für die Trauerfeier oder Beisetzung."),
             ("Zum Gedenken", "Für den Jahrestag, Allerheiligen oder einen Erinnerungsplatz zu Hause."),
@@ -685,9 +675,9 @@ PAGES = [
             ("Was kostet eine Trauerkerze?",
              "Der Preis richtet sich nach Größe und Gestaltung. Ihr bekommt vorab ein unverbindliches Angebot."),
             ("Können wir die Kerze auch später zum Gedenken bestellen?",
-             "Ja. Viele bestellen eine Gedenkkerze zum Jahrestag oder für einen Erinnerungsplatz zu Hause."),
+             "Ja – zum Beispiel zum Jahrestag oder für einen Erinnerungsplatz zu Hause."),
         ],
-        wa="Hallo Monika und Armin, ich interessiere mich für eine Trauerkerze/Gedenkkerze.\n\nName:\nLebensdaten:\nTermin:\nSpruch/Motiv:",
+        wa="Hallo Monika und Armin, ich interessiere mich für eine Trauerkerze/Gedenkkerze.\n\nName:\nLebensdaten:\nTermin:",
         cta_title="Trauer- oder Gedenkkerze anfragen",
     ),
 ]
@@ -695,27 +685,27 @@ PAGES = [
 PAGES.append(dict(
     slug="geburtstagskerzen", key="geburtstag", name="Geburtstag & Jubiläum",
     title="Geburtstagskerzen & Jubiläumskerzen mit Namen | Kerzenküche Balingen",
-    desc="Persönliche Geburtstagskerzen zum 18., 50., 60., 80. oder 90. – und Kerzen zum Jubiläum. Mit Name, Zahl und Lieblingsblumen, handgefertigt in Balingen.",
+    desc="Persönliche Geburtstagskerzen mit Name, Zahl und Blumen – zum 60., 70., 80. oder 90. und zum Jubiläum. Handgefertigt in Balingen.",
     eyebrow="Geburtstag &amp; Jubiläum",
     h1="Kerzen für <em>runde Tage.</em>",
-    intro="Ob 18., 60. oder 90. Geburtstag, Silberhochzeit oder Firmenjubiläum: Eine persönlich gestaltete Kerze ist ein Geschenk, das in Erinnerung bleibt – mit Name, Zahl und den Lieblingsfarben des Geburtstagskindes.",
+    intro="Zum runden Geburtstag oder Jubiläum: Eine persönlich gestaltete Kerze ist ein Geschenk, das in Erinnerung bleibt – mit Name, Zahl und den Lieblingsblumen des Geburtstagskindes.",
     img=("/galerie/bilder/geburtstagskerzen-jubilaeum.jpg", 1600, 1600, "Persönliche Geburtstagskerzen zum 60., 77., 80. und 84. Geburtstag"),
     options=[
         ("Name &amp; Zahl", "Der Name des Geburtstagskindes und die große Zahl – der Blickfang jeder Geburtstagskerze."),
         ("Datum", "Das Geburtsdatum oder das Datum des Festes."),
-        ("Lieblingsblumen", "Rosen, Sonnenblumen, Vergissmeinnicht – oder was das Geburtstagskind besonders mag."),
-        ("Herz &amp; Ornamente", "Herzen, Ranken, Schmetterlinge oder ein persönliches Motiv."),
-        ("Ein Spruch", "Ein Glückwunsch, ein Lebensmotto oder ein paar liebe Worte."),
-        ("Jubiläen", "Silber- und Goldhochzeit, Dienst- oder Firmenjubiläum."),
+        ("Kurzer Gruß", "Zum Beispiel „Zum 80. Geburtstag“ oder „Herzlichen Glückwunsch“."),
+        ("Blumen", "Rosen, Sonnenblumen oder kleine blaue Blüten."),
+        ("Herz &amp; Ranken", "Ein Herz um die Zahl, Ranken oder Schmetterlinge."),
+        ("Verschiedene Formen", "Klassisch rund, geschwungen oder als spitze Bogenkerze."),
     ],
-    note="Ein schönes Geschenk von der ganzen Familie oder vom Verein: Erzählt uns ein bisschen über das Geburtstagskind – wir machen daraus eine Kerze, die wirklich passt.",
+    note="Ein schönes Geschenk von der ganzen Familie: Erzählt uns ein bisschen über das Geburtstagskind – zum Beispiel seine Lieblingsfarben und -blumen.",
     faq=[
         ("Wie früh sollte ich eine Geburtstagskerze bestellen?",
          "Am besten ein bis zwei Wochen vor dem Fest. Es ist knapp? Fragt trotzdem – wir sagen euch ehrlich, ob es klappt."),
         ("Was kostet eine Geburtstagskerze?",
          "Das hängt von Größe und Gestaltung ab. Schreibt uns eure Wünsche, ihr bekommt vorab ein unverbindliches Angebot."),
-        ("Macht ihr auch Kerzen zur Silber- oder Goldhochzeit?",
-         "Ja, sehr gern – mit Namen, Datum und der passenden Zahl."),
+        ("Macht ihr auch Kerzen zum Jubiläum?",
+         "Ja – ebenfalls mit Namen, Datum und der passenden Zahl."),
     ],
     wa="Hallo Monika und Armin, ich interessiere mich für eine Geburtstags-/Jubiläumskerze.\n\nName:\nWelcher Geburtstag/Anlass:\nDatum:\nLieblingsfarben/-blumen:",
     cta_title="Geburtstags- oder Jubiläumskerze anfragen",
@@ -911,7 +901,7 @@ datenschutz = f"""
                     <p>Datenschutzhinweise von WhatsApp: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy-eea</a></p>
 
                     <h2>6. Bestellungen</h2>
-                    <p>Für eine Bestellung benötigen wir eure Kontaktdaten sowie die Angaben zur Gestaltung der Kerze (z.&nbsp;B. Namen, Daten, Sprüche). Diese verwenden wir ausschließlich zur Herstellung und Übergabe der Kerze (Art. 6 Abs. 1 lit. b DSGVO). Rechnungsrelevante Unterlagen bewahren wir entsprechend den gesetzlichen Aufbewahrungsfristen (bis zu 10 Jahre nach HGB/AO) auf; alle übrigen Daten löschen wir, sobald sie nicht mehr benötigt werden.</p>
+                    <p>Für eine Bestellung benötigen wir eure Kontaktdaten sowie die Angaben zur Gestaltung der Kerze (z.&nbsp;B. Namen und Daten). Diese verwenden wir ausschließlich zur Herstellung und Übergabe der Kerze (Art. 6 Abs. 1 lit. b DSGVO). Rechnungsrelevante Unterlagen bewahren wir entsprechend den gesetzlichen Aufbewahrungsfristen (bis zu 10 Jahre nach HGB/AO) auf; alle übrigen Daten löschen wir, sobald sie nicht mehr benötigt werden.</p>
 
                     <h2>7. Fotos in der Galerie</h2>
                     <p>Fotos von Kerzen, auf denen persönliche Angaben wie Namen oder Daten zu sehen sind, veröffentlichen wir nur mit Einwilligung der jeweiligen Kundinnen und Kunden (Art. 6 Abs. 1 lit. a DSGVO) oder machen diese Angaben unkenntlich. Eine Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden – eine kurze Nachricht genügt, dann entfernen wir das Bild.</p>
@@ -945,7 +935,7 @@ widerruf = f"""
                     <h2>Wann gibt es ein Widerrufsrecht?</h2>
                     <ul>
                         <li><strong>Kauf vor Ort in unserem Laden:</strong> Hier besteht kein gesetzliches Widerrufsrecht.</li>
-                        <li><strong>Personalisierte Kerzen</strong> (z.&nbsp;B. mit Namen, Datum, Spruch oder Wunschmotiv): Diese fertigen wir eigens nach euren Vorgaben an. Ein Widerrufsrecht besteht daher nicht – auch nicht bei Bestellung per WhatsApp, Telefon oder E-Mail (§ 312g Abs. 2 Nr. 1 BGB).</li>
+                        <li><strong>Personalisierte Kerzen</strong> (z.&nbsp;B. mit Namen und Datum): Diese fertigen wir eigens nach euren Vorgaben an. Ein Widerrufsrecht besteht daher nicht – auch nicht bei Bestellung per WhatsApp, Telefon oder E-Mail (§ 312g Abs. 2 Nr. 1 BGB).</li>
                         <li><strong>Nicht personalisierte Ware, die ihr ausschließlich per WhatsApp, Telefon oder E-Mail bestellt</strong> und euch zuschicken lasst: Hierfür gilt das folgende Widerrufsrecht.</li>
                     </ul>
 
@@ -1004,7 +994,10 @@ write("404.html", nf)
 
 # ==========================================================================
 # Ratgeber: Taufsprüche
+# Abgeschaltet, bis belegt ist, welche Texte auf die Kerzen passen.
+# Zum Aktivieren auf True setzen (Link im Footer/Taufe-Seite wieder ergänzen).
 # ==========================================================================
+RATGEBER_AKTIV = False
 
 VERSE = [
     ("Licht – passend zur Kerze", [
@@ -1148,17 +1141,20 @@ ratgeber = head(
             </div>
         </section>
 """ + contact(tauf_wa, title="Euren Taufspruch auf eure Kerze?", text="Schickt uns euren Spruch, den Namen und das Taufdatum – wir gestalten daraus eure Taufkerze.") + footer()
-write("ratgeber/taufsprueche/index.html", ratgeber)
+if RATGEBER_AKTIV:
+    write("ratgeber/taufsprueche/index.html", ratgeber)
 
 # ==========================================================================
 # Sitemap
 # ==========================================================================
 
 urls = [("/", "1.0"), ("/taufkerzen/", "0.9"), ("/kommunion-konfirmation/", "0.9"), ("/hochzeitskerzen/", "0.9"),
-        ("/trauerkerzen/", "0.9"), ("/geburtstagskerzen/", "0.9"), ("/galerie/", "0.8"), ("/ratgeber/taufsprueche/", "0.7"),
+        ("/trauerkerzen/", "0.9"), ("/geburtstagskerzen/", "0.9"), ("/galerie/", "0.8"),
         ("/impressum/", "0.2"), ("/datenschutz/", "0.2"), ("/widerruf/", "0.2")]
 SEITEN_KEY = {"/taufkerzen/": "taufe", "/kommunion-konfirmation/": "kommunion", "/hochzeitskerzen/": "hochzeit",
               "/trauerkerzen/": "trauer", "/geburtstagskerzen/": "geburtstag", "/galerie/": "alle"}
+if RATGEBER_AKTIV:
+    urls.insert(7, ("/ratgeber/taufsprueche/", "0.7"))
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
 for u, prio in urls:
     sm += f"  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>2026-10-08</lastmod>\n    <priority>{prio}</priority>\n"
