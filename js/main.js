@@ -83,6 +83,10 @@
         duft: 'Duft & Keramik',
         weitere: 'Weitere'
     };
+    var KURZ = {
+        taufe: 'Taufe', kommunion: 'Kommunion', hochzeit: 'Hochzeit', trauer: 'Gedenken',
+        geburtstag: 'Geburtstag', deko: 'Deko & Form', duft: 'Duft', weitere: 'Kerze'
+    };
     var WHATSAPP = 'https://wa.me/491741941927?text=' +
         encodeURIComponent('Hallo Monika und Armin, habt ihr ein paar Beispielbilder für mich? Ich interessiere mich für eine Kerze zum Anlass: ');
 
@@ -169,9 +173,20 @@
             img.loading = 'lazy';
             img.decoding = 'async';
             btn.appendChild(img);
-            // Beschreibung nur in der Großansicht zeigen, nicht über dem Vorschaubild
             btn.addEventListener('click', function () { openLightbox(list, i); });
             fig.appendChild(btn);
+            // Kategorie + kurzer Name unter dem Bild (nicht darüber, damit die Kerze frei bleibt)
+            var cap = document.createElement('figcaption');
+            cap.className = 'gallery-caption';
+            var kat = document.createElement('span');
+            kat.className = 'gallery-cat';
+            kat.textContent = KURZ[b.anlass] || '';
+            var name = document.createElement('span');
+            name.className = 'gallery-name';
+            name.textContent = b.kurz || b.titel || '';
+            cap.appendChild(kat);
+            cap.appendChild(name);
+            fig.appendChild(cap);
             container.appendChild(fig);
         });
     }
