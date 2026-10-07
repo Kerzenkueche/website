@@ -1,48 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/taufkerzen/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.9</priority>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/taufkerze-lebensbaum-blau.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/taufkerzen-blau-kreuz-lebensbaum.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/taufkerzen-rosa-maedchen.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/kommunion-konfirmation/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.9</priority>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-rosen-blau.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-holy-communion.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-gruen-kelch-fische.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-regenbogen-kreuz.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/hochzeitskerzen/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/trauerkerzen/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.xn--kerzenkche-geb.de/geburtstagskerzen/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/geburtstagskerzen-jubilaeum.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.xn--kerzenkche-geb.de/galerie/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.8</priority>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/taufkerze-lebensbaum-blau.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/taufkerzen-blau-kreuz-lebensbaum.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/taufkerzen-rosa-maedchen.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-rosen-blau.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-holy-communion.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-gruen-kelch-fische.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kommunionkerze-regenbogen-kreuz.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/geburtstagskerzen-jubilaeum.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kerze-herz-haende.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/windlicht-gepresste-blueten.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/formkerze-spirale.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/formkerzen-creme-gedreht.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/formkerzen-pink.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kugelkerzen-blau-pyramide.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/schichtkerzen-tuerkis-gruen.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/perlenkerzen-rot-weiss.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/kerzen-petrol-kugel-sechseck.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/sechseckkerze-blau-weiss.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/formkerzen-weiss-kugel-blau.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/duftwachsmelts-duftlampe.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.xn--kerzenkche-geb.de/galerie/bilder/duftwachswuerfel-duftlampen.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.xn--kerzenkche-geb.de/ratgeber/taufsprueche/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/impressum/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/datenschutz/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.xn--kerzenkche-geb.de/widerruf/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.2</priority>
   </url>
 </urlset>

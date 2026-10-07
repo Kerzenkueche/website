@@ -134,6 +134,12 @@
         document.body.style.overflow = '';
     }
 
+    function thumb(datei) {
+        return datei.indexOf('/galerie/bilder/') === 0
+            ? datei.replace('/galerie/bilder/', '/galerie/bilder/thumbs/')
+            : datei;
+    }
+
     function render(container, anlass) {
         var limit = parseInt(container.getAttribute('data-limit') || '0', 10);
         var list = BILDER.filter(function (b) { return !anlass || anlass === 'alle' || b.anlass === anlass; });
@@ -157,7 +163,9 @@
             btn.className = 'gallery-item';
             btn.setAttribute('aria-label', 'Bild vergrößern: ' + (b.titel || ''));
             var img = document.createElement('img');
-            img.src = b.datei;
+            // Kleines Vorschaubild aus /thumbs/ – fehlt es (neu hochgeladenes Bild), das Original nehmen
+            img.src = thumb(b.datei);
+            img.onerror = function () { img.onerror = null; img.src = b.datei; };
             img.alt = b.titel || 'Kerze aus der Kerzenküche';
             img.loading = 'lazy';
             img.decoding = 'async';
