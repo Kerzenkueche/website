@@ -49,25 +49,14 @@
         fab.innerHTML = waLink.querySelector('svg').outerHTML + '<span>Anfragen</span>';
         document.body.appendChild(fab);
 
-        // Ausblenden, solange Kontaktbereich oder Footer sichtbar sind (dort gibt es WhatsApp schon)
-        var sichtbar = {};
+        // Immer sichtbar – nur bei geöffnetem Handy-Menü ausgeblendet, damit er nichts verdeckt
         function updateFab() {
-            var verdeckt = Object.keys(sichtbar).some(function (k) { return sichtbar[k]; });
-            var zeigen = window.scrollY > 400 && !verdeckt &&
-                !(header && header.classList.contains('menu-open'));
-            fab.classList.toggle('is-visible', zeigen);
+            fab.classList.toggle('is-visible', !(header && header.classList.contains('menu-open')));
         }
-        if ('IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (e) { sichtbar[e.target.className] = e.isIntersecting; });
-                updateFab();
-            });
-            io.observe(kontakt);
-            var footerEl = document.querySelector('.site-footer');
-            if (footerEl) io.observe(footerEl);
-        }
-        window.addEventListener('scroll', updateFab, { passive: true });
         if (toggle) toggle.addEventListener('click', updateFab);
+        if (header) header.querySelectorAll('.mobile-menu a').forEach(function (a) {
+            a.addEventListener('click', updateFab);
+        });
         updateFab();
     }
 

@@ -510,6 +510,8 @@ p { margin: 0 0 1.25rem; overflow-wrap: break-word; }
 /* ---------- Footer ---------- */
 
 .site-footer { background: var(--sand); padding: 4.5rem 0 2rem; }
+/* Platz für den schwebenden WhatsApp-Button, damit er die unteren Links nicht verdeckt */
+@media (max-width: 767px) { .site-footer { padding-bottom: 6rem; } }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; margin-bottom: 3rem; }
 .footer-brand { grid-column: 1 / -1; }
 @media (min-width: 768px) {
