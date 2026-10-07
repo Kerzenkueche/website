@@ -21,7 +21,7 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=3">
+    <link rel="stylesheet" href="/css/style.css?v=5">
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -88,18 +88,48 @@
         </section>
 
         <section id="kontakt" class="section bg-dark contact">
-            <div class="container container--narrow reveal">
-                <span class="eyebrow">Kontakt</span>
-                <h2>Wunschkerze anfragen?</h2>
-                <p class="lead">Wir beraten euch persönlich – damit eure Kerze genau so wird, wie ihr sie euch vorstellt. Preise je nach Kerze und Gestaltung auf Anfrage.</p>
-                <div class="btn-row btn-row--center">
+            <div class="container contact-grid">
+                <div class="contact-intro reveal">
+                    <span class="eyebrow">Kontakt</span>
+                    <h2>Wunschkerze anfragen?</h2>
+                    <p class="lead">Wir beraten euch persönlich – damit eure Kerze genau so wird, wie ihr sie euch vorstellt. Preise je nach Kerze und Gestaltung auf Anfrage.</p>
                     <a href="https://wa.me/491741941927?text=Hallo%20Monika%20und%20Armin%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wunschkerze.%0A" class="btn btn--light" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 00-.8.4 3.4 3.4 0 00-1 2.5 5.9 5.9 0 001.2 3.1 13.5 13.5 0 005.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 002.1-1.4 2.5 2.5 0 00.2-1.5c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zm0-21.6A11.8 11.8 0 001.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1012 .2z"/></svg><span>Per WhatsApp anfragen</span></a>
-                    <a href="mailto:monikagogoll@gmx.de" class="btn btn--ghost-light"><span>E-Mail schreiben</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
+                    <p class="contact-tip">Am schnellsten geht's per WhatsApp – gerne gleich mit einem Foto eurer Idee.</p>
                 </div>
-                <p class="contact-meta">
-                    Telefon: <a href="tel:+491741941927">0174 194 19 27</a> &nbsp;·&nbsp; Werkstatt: Hebsackstraße 3, 72336 Balingen<br>
-                    Abholung nach Absprache
-                </p>
+                <ul class="contact-cards reveal">
+                    <li>
+                        <a href="https://wa.me/491741941927?text=Hallo%20Monika%20und%20Armin%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wunschkerze.%0A" target="_blank" rel="noopener">
+                            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 00-.8.4 3.4 3.4 0 00-1 2.5 5.9 5.9 0 001.2 3.1 13.5 13.5 0 005.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 002.1-1.4 2.5 2.5 0 00.2-1.5c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zm0-21.6A11.8 11.8 0 001.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1012 .2z"/></svg></span>
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value">0174 194 19 27</span>
+                            <span class="contact-hint">Nachricht schreiben</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+491741941927">
+                            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5.5A2.5 2.5 0 015.5 3h1.6a1 1 0 01.95.68l1.2 3.6a1 1 0 01-.27 1.05l-1.5 1.4a12 12 0 006.8 6.8l1.4-1.5a1 1 0 011.05-.27l3.6 1.2a1 1 0 01.68.95v1.6A2.5 2.5 0 0118.5 21h-1C9.5 21 3 14.5 3 6.5v-1z"/></svg></span>
+                            <span class="contact-label">Telefon</span>
+                            <span class="contact-value">0174 194 19 27</span>
+                            <span class="contact-hint">Anrufen</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:monikagogoll@gmx.de">
+                            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5l8.5 6 8.5-6"/></svg></span>
+                            <span class="contact-label">E-Mail</span>
+                            <span class="contact-value">monikagogoll@gmx.de</span>
+                            <span class="contact-hint">E-Mail schreiben</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Hebsackstra%C3%9Fe%203%2C%2072336%20Balingen" target="_blank" rel="noopener">
+                            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.1-7-11.5a7 7 0 0114 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                            <span class="contact-label">Werkstatt</span>
+                            <span class="contact-value">Hebsackstraße 3<br>72336 Balingen</span>
+                            <span class="contact-hint">Abholung nach Absprache · Route planen</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -107,41 +137,50 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h3>Kerzenküche</h3>
-                    <p>Handgegossene und persönlich gestaltete Kerzen aus Balingen.<br>Von Armin &amp; Monika.</p>
+                <div class="footer-brand">
+                    <a href="/" class="logo">Kerzenküche</a>
+                    <p>Handgegossene und persönlich gestaltete Kerzen aus unserer Werkstatt in Balingen – für Taufe, Kommunion, Hochzeit und jeden besonderen Moment.</p>
+                    <p class="footer-sign">Armin &amp; Monika</p>
                 </div>
-                <div>
+                <nav aria-label="Anlässe">
                     <h4>Anlässe</h4>
                     <ul>
                         <li><a href="/taufkerzen/">Taufkerzen</a></li>
                         <li><a href="/kommunion-konfirmation/">Kommunion &amp; Konfirmation</a></li>
                         <li><a href="/hochzeitskerzen/">Hochzeitskerzen</a></li>
                         <li><a href="/trauerkerzen/">Trauer &amp; Gedenken</a></li>
-                        <li><a href="/galerie/">Galerie</a></li>
                     </ul>
-                </div>
+                </nav>
+                <nav aria-label="Entdecken">
+                    <h4>Entdecken</h4>
+                    <ul>
+                        <li><a href="/galerie/">Galerie</a></li>
+                        <li><a href="/#manufaktur">Manufaktur</a></li>
+                        <li><a href="/#material">Material</a></li>
+                        <li><a href="/#sammelstellen">Sammelstellen</a></li>
+                    </ul>
+                </nav>
                 <div>
                     <h4>Kontakt</h4>
-                    <ul>
-                        <li>Hebsackstr. 3, 72336 Balingen</li>
-                        <li><a href="tel:+491741941927">0174 194 19 27</a></li>
-                        <li><a href="mailto:monikagogoll@gmx.de">monikagogoll@gmx.de</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Rechtliches</h4>
-                    <ul>
-                        <li><a href="/impressum/">Impressum</a></li>
-                        <li><a href="/datenschutz/">Datenschutz</a></li>
-                        <li><a href="/widerruf/">Bestellung &amp; Widerruf</a></li>
+                    <ul class="footer-contact">
+                        <li><a href="https://wa.me/491741941927?text=Hallo%20Monika%20und%20Armin%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wunschkerze." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 00-.8.4 3.4 3.4 0 00-1 2.5 5.9 5.9 0 001.2 3.1 13.5 13.5 0 005.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 002.1-1.4 2.5 2.5 0 00.2-1.5c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zm0-21.6A11.8 11.8 0 001.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1012 .2z"/></svg><span>WhatsApp</span></a></li>
+                        <li><a href="tel:+491741941927"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5.5A2.5 2.5 0 015.5 3h1.6a1 1 0 01.95.68l1.2 3.6a1 1 0 01-.27 1.05l-1.5 1.4a12 12 0 006.8 6.8l1.4-1.5a1 1 0 011.05-.27l3.6 1.2a1 1 0 01.68.95v1.6A2.5 2.5 0 0118.5 21h-1C9.5 21 3 14.5 3 6.5v-1z"/></svg><span>0174 194 19 27</span></a></li>
+                        <li><a href="mailto:monikagogoll@gmx.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5l8.5 6 8.5-6"/></svg><span>monikagogoll@gmx.de</span></a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Hebsackstra%C3%9Fe%203%2C%2072336%20Balingen" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.1-7-11.5a7 7 0 0114 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Hebsackstr. 3, 72336 Balingen</span></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 Kerzenküche Balingen</div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Kerzenküche Balingen</span>
+                <ul>
+                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="/datenschutz/">Datenschutz</a></li>
+                    <li><a href="/widerruf/">Bestellung &amp; Widerruf</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
-    <script src="/js/main.js?v=3"></script>
+    <script src="/js/main.js?v=5"></script>
 </body>
 </html>
