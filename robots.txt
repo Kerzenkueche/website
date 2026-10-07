@@ -1,8 +1,7 @@
 # robots.txt für Kerzenküche
-# https://kerzenkueche.de
+# https://www.xn--kerzenkche-geb.de
 
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://kerzenkueche.de/sitemap.xml
+Sitemap: https://www.xn--kerzenkche-geb.de/sitemap.xml

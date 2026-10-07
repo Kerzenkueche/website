@@ -1,393 +1,472 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Kerzenküche Balingen | Handgegossene Kerzen von Armin & Monika</title>
-    <meta name="description" content="Handgegossene Kerzen aus Bienenwachs und Paraffin. Von Armin & Monika in Balingen. Jede Kerze ein Unikat – für Taufe, Hochzeit, Jubiläum.">
-    <meta name="keywords" content="Kerzen Balingen, Bienenwachskerzen, Taufkerze individuell, Hochzeitskerze, handgegossen, Upcycling Kerzen">
+    <title>Taufkerzen &amp; Wunschkerzen aus Balingen | Kerzenküche</title>
+    <meta name="description" content="Persönlich gestaltete Taufkerzen, Kommunion-, Hochzeits- und Trauerkerzen – von Hand gegossen von Armin &amp; Monika in Balingen. Für den ganzen Zollernalbkreis.">
+    <link rel="canonical" href="https://www.xn--kerzenkche-geb.de/">
 
-    <meta property="og:title" content="Kerzenküche Balingen | Handgegossene Kerzen">
-    <meta property="og:description" content="Handgegossene Kerzen aus Bienenwachs und Paraffin. Von Armin & Monika in Balingen.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://www.xn--kerzenkche-geb.de/">
-    <meta property="og:image" content="og-image.jpg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        primary: '#433835',   /* Tiefes, warmes Espresso-Braun statt Schwarz */
-                        secondary: '#F5F2EB', /* Warmer Sandton statt Grau */
-                        paper: '#FDFBF7',     /* Cremiges Off-White statt Reinweiß */
-                        accent: '#C59D5F',    /* Mattes Gold */
-                        textlight: '#8C8582', /* Sanftes Taupe für Nebentexte */
-                    }
-                }
-            }
-        }
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Kerzenküche Balingen">
+    <meta property="og:title" content="Taufkerzen &amp; Wunschkerzen aus Balingen | Kerzenküche">
+    <meta property="og:description" content="Persönlich gestaltete Taufkerzen, Kommunion-, Hochzeits- und Trauerkerzen – von Hand gegossen von Armin &amp; Monika in Balingen. Für den ganzen Zollernalbkreis.">
+    <meta property="og:url" content="https://www.xn--kerzenkche-geb.de/">
+    <meta property="og:image" content="https://www.xn--kerzenkche-geb.de/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.xn--kerzenkche-geb.de/#kerzenkueche",
+  "name": "Kerzenküche",
+  "description": "Handgegossene und personalisierte Kerzen aus Balingen: Taufkerzen, Kommunion- und Konfirmationskerzen, Hochzeitskerzen, Trauerkerzen und Wunschkerzen.",
+  "url": "https://www.xn--kerzenkche-geb.de/",
+  "image": "https://www.xn--kerzenkche-geb.de/og-image.jpg",
+  "telephone": "+491741941927",
+  "email": "monikagogoll@gmx.de",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Monika Gogoll"
+    },
+    {
+      "@type": "Person",
+      "name": "Armin"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hebsackstraße 3",
+    "postalCode": "72336",
+    "addressLocality": "Balingen",
+    "addressRegion": "Baden-Württemberg",
+    "addressCountry": "DE"
+  },
+  "areaServed": [
+    "Balingen",
+    "Albstadt",
+    "Hechingen",
+    "Geislingen",
+    "Rosenfeld",
+    "Meßstetten",
+    "Haigerloch",
+    "Rottweil",
+    "Zollernalbkreis"
+  ],
+  "knowsAbout": [
+    "Taufkerzen",
+    "Kommunionkerzen",
+    "Konfirmationskerzen",
+    "Hochzeitskerzen",
+    "Trauerkerzen",
+    "Bienenwachskerzen"
+  ]
+}
     </script>
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; color: #433835; background-color: #FDFBF7; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        
-        /* 5:4 Format für alle Bilder */
-        .aspect-5-4 {
-            aspect-ratio: 5 / 4;
-            overflow: hidden;
-            background-color: #ECE8E1; /* Warmer Platzhalter */
-            border-radius: 0.5rem;
-        }
-        
-        .aspect-5-4 img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s ease;
-        }
-        
-        .hover-zoom:hover img {
-            transform: scale(1.03);
-        }
-
-        .btn-primary {
-            background-color: #433835;
-            color: #FDFBF7;
-            padding: 0.75rem 1.75rem;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        .btn-primary:hover { background-color: #C59D5F; color: white; transform: translateY(-1px); }
-
-        .btn-outline {
-            border: 1px solid #D1CDC7;
-            color: #433835;
-            padding: 0.75rem 1.75rem;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        .btn-outline:hover { border-color: #433835; background-color: #fff; }
-
-        /* Smooth Reveal Animation */
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet eine persönliche Kerze?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das hängt von Größe, Wachs und Aufwand der Gestaltung ab. Schreibt uns eure Wünsche – ihr bekommt ein unverbindliches Angebot, bevor wir loslegen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie früh sollte ich bestellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Am besten einige Wochen vor eurem Termin, damit genug Zeit für Absprache und Handarbeit bleibt. Es ist knapp? Fragt trotzdem – wir sagen euch ehrlich, ob es klappt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich ein eigenes Motiv mitbringen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sehr gern. Schickt uns ein Foto, eine Skizze oder z. B. die Einladungskarte – wir greifen Motiv und Farben auf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie bekomme ich meine Kerze?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ihr holt sie in unserer Werkstatt in der Hebsackstraße 3 in Balingen ab. Den Termin vereinbaren wir mit euch. Versand? Sprecht uns einfach an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Woraus sind eure Kerzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir arbeiten mit Bienenwachs, Rapswachs und hochwertigem Paraffin – und gießen aus gesammelten Kerzenresten neue Kerzen. Welches Wachs zu eurer Kerze passt, besprechen wir gemeinsam."
+      }
+    }
+  ]
+}
+    </script>
 </head>
-<body class="flex flex-col min-h-screen selection:bg-accent selection:text-white">
+<body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-    <nav class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-secondary transition-all">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
-                <a href="#" class="font-serif text-2xl font-bold tracking-tight text-primary">Kerzenküche</a>
-                
-                <div class="hidden md:flex space-x-10">
-                    <a href="#manufaktur" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Manufaktur</a>
-                    <a href="#material" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Material</a>
-                    <a href="#anlaesse" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Anlässe</a>
-                    <a href="#sammelstellen" class="text-xs uppercase tracking-widest text-textlight hover:text-primary transition-colors font-medium">Sammelstellen</a>
-                </div>
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav" aria-label="Hauptnavigation">
+                <a href="/" class="logo">Kerzenküche</a>
 
-                <div>
-                    <a href="#kontakt" class="text-xs uppercase tracking-widest border border-primary/20 text-primary px-6 py-2.5 rounded-full hover:bg-primary hover:text-paper transition-all font-medium">
-                        Kontakt
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+                <ul class="nav-links">
+                    <li class="has-dropdown">
+                        <a href="/#anlaesse">Anlässe</a>
+                        <ul class="dropdown">
+                            <li><a href="/taufkerzen/">Taufkerzen</a></li>
+                            <li><a href="/kommunion-konfirmation/">Kommunion &amp; Konfirmation</a></li>
+                            <li><a href="/hochzeitskerzen/">Hochzeitskerzen</a></li>
+                            <li><a href="/trauerkerzen/">Trauer &amp; Gedenken</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/galerie/">Galerie</a></li>
+                    <li><a href="/#manufaktur">Manufaktur</a></li>
+                    <li><a href="/#material">Material</a></li>
+                    <li><a href="/#sammelstellen">Sammelstellen</a></li>
+                </ul>
 
-    <header class="relative bg-secondary py-24 lg:py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="z-10 reveal">
-                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-4 block">Armin & Monika</span>
-                    <h1 class="text-5xl lg:text-7xl font-serif font-medium leading-[1.1] mb-8 text-primary">
-                        Kerzen aus der <br> <span class="italic text-primary/80">Werkstatt.</span>
-                    </h1>
-                    <p class="text-textlight text-lg leading-relaxed mb-10 max-w-md font-light">
-                        Wir gießen jede Kerze von Hand – aus Bienenwachs, Rapswachs und Paraffin.
-                    </p>
-                    
-                    <div class="flex gap-6 mb-12 text-xs font-medium uppercase tracking-widest text-primary/40">
-                        <span class="border-b border-primary/20 pb-1">Bienenwachs</span>
-                        <span class="border-b border-primary/20 pb-1">Upcycling</span>
-                        <span class="border-b border-primary/20 pb-1">Handarbeit</span>
-                    </div>
+                <a href="#kontakt" class="nav-cta">Kontakt</a>
 
-                    <a href="#manufaktur" class="btn-primary">Unsere Geschichte</a>
-                </div>
-                
-                <div class="relative reveal delay-100">
-                    <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
-                        <img src="hero.jpg" alt="Handgegossene Bienenwachskerze in der Kerzenküche Balingen">
-                    </div>
-                </div>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+                    <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+            </nav>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="/#anlaesse">Anlässe</a></li>
+                    <li class="sub"><a href="/taufkerzen/">Taufkerzen</a></li>
+                    <li class="sub"><a href="/kommunion-konfirmation/">Kommunion &amp; Konfirmation</a></li>
+                    <li class="sub"><a href="/hochzeitskerzen/">Hochzeitskerzen</a></li>
+                    <li class="sub"><a href="/trauerkerzen/">Trauer &amp; Gedenken</a></li>
+                    <li><a href="/galerie/">Galerie</a></li>
+                    <li><a href="/#manufaktur">Manufaktur</a></li>
+                    <li><a href="/#material">Material</a></li>
+                    <li><a href="/#sammelstellen">Sammelstellen</a></li>
+                </ul>
+                <a href="#kontakt" class="btn btn--primary">Kontakt &amp; Anfrage</a>
             </div>
         </div>
     </header>
 
-    <section id="manufaktur" class="py-32 bg-paper">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="order-2 lg:order-1 reveal">
-                    <div class="aspect-5-4 shadow-lg hover-zoom bg-secondary">
-                        <img src="team.jpg" alt="Armin und Monika beim Kerzengießen in ihrer Werkstatt">
+    <main id="inhalt">
+
+        <section class="hero">
+            <div class="container split">
+                <div>
+                    <span class="eyebrow">Kerzenmanufaktur in Balingen</span>
+                    <h1 class="display">Kerzen für eure <br><em>besonderen Momente.</em></h1>
+                    <p class="lead">Taufkerzen, Hochzeitskerzen und Wunschkerzen – von Hand gegossen und ganz persönlich gestaltet von Armin &amp; Monika.</p>
+                    <ul class="tags">
+                        <li>Personalisiert</li>
+                        <li>Handarbeit</li>
+                        <li>Bienenwachs</li>
+                        <li>Upcycling</li>
+                    </ul>
+                    <div class="btn-row">
+                        <a href="#anlaesse" class="btn btn--primary">Anlässe entdecken</a>
+                        <a href="/galerie/" class="btn btn--outline">Galerie ansehen</a>
                     </div>
                 </div>
-                
-                <div class="order-1 lg:order-2 reveal">
-                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Die Macher</span>
-                    <h2 class="text-4xl lg:text-5xl font-serif mb-8 leading-tight text-primary">Vier Hände, <br>eine Werkstatt.</h2>
-                    <div class="space-y-6 text-textlight font-light leading-relaxed text-lg">
-                        <p>
-                            Wir sind Armin und Monika. In unserer Werkstatt in Balingen gießen wir jede Kerze von Hand.
-                        </p>
-                        <p>
-                            Keine Fließbandware. Jede Kerze entsteht in Ruhe, mit der Zeit, die sie braucht. Das macht den Unterschied, wenn ihr sie anzündet.
-                        </p>
+                <div>
+                    <div class="media">
+                        <img src="/hero.jpg" width="1500" height="1200" alt="Handgegossene Bienenwachskerze aus der Kerzenküche Balingen" fetchpriority="high">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="material" class="py-32 bg-secondary">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid gap-20 items-center max-w-4xl mx-auto">
+        <section id="anlaesse" class="section bg-sand" style="padding-top:0">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Lebensbegleiter</span>
+                    <h2 class="title">Kerzen für Meilensteine.</h2>
+                    <p class="muted text-light">Jede Kerze gestalten wir einzeln – mit Namen, Datum, Spruch und Motiv, ganz nach euren Wünschen.</p>
+                </div>
+                <div class="cards">
+                    <a href="/taufkerzen/" class="card reveal">
+                        <div class="media"><img src="/anlass.jpg" width="1500" height="1200" loading="lazy" alt="Persönlich gestaltete Taufkerze"></div>
+                        <div class="card-body">
+                            <h3>Taufkerzen</h3>
+                            <p>Mit Name, Taufdatum, Taufspruch und Symbolen – eine Kerze, die ein Leben lang begleitet.</p>
+                            <span class="link-arrow">Mehr erfahren</span>
+                        </div>
+                    </a>
+                    <a href="/kommunion-konfirmation/" class="card reveal">
+                        <div class="media"><img src="/hero.jpg" width="1500" height="1200" loading="lazy" alt="Kerze zur Kommunion oder Konfirmation"></div>
+                        <div class="card-body">
+                            <h3>Kommunion &amp; Konfirmation</h3>
+                            <p>Passend zu Kind, Gemeinde und Motto – auf Wunsch nach den Vorgaben eurer Gemeinde.</p>
+                            <span class="link-arrow">Mehr erfahren</span>
+                        </div>
+                    </a>
+                    <a href="/hochzeitskerzen/" class="card reveal">
+                        <div class="media"><img src="/gesteck.jpg" width="1500" height="1200" loading="lazy" alt="Dekorierte Kerze für Hochzeit und Feier"></div>
+                        <div class="card-body">
+                            <h3>Hochzeitskerzen</h3>
+                            <p>Mit euren Namen und eurem Datum – für die Trauung und jeden Hochzeitstag danach.</p>
+                            <span class="link-arrow">Mehr erfahren</span>
+                        </div>
+                    </a>
+                    <a href="/trauerkerzen/" class="card reveal">
+                        <div class="media"><img src="/bienenwachs.jpg" width="1080" height="1091" loading="lazy" alt="Natürliches Bienenwachs für Gedenkkerzen"></div>
+                        <div class="card-body">
+                            <h3>Trauer &amp; Gedenken</h3>
+                            <p>Behutsam gestaltete Kerzen, die an einen geliebten Menschen erinnern.</p>
+                            <span class="link-arrow">Mehr erfahren</span>
+                        </div>
+                    </a>
+                    <a href="#kontakt" class="card card--text reveal">
+                        <div class="card-body">
+                            <span class="eyebrow">Eure Idee</span>
+                            <h3>Und alles andere.</h3>
+                            <p>Geburtstag, Jubiläum, Einschulung, Firmenfeier oder ein ganz eigener Anlass – erzählt uns eure Idee, wir machen eine Kerze daraus.</p>
+                            <span class="link-arrow">Idee schicken</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--tight bg-paper region">
+            <div class="container reveal">
+                <span class="eyebrow">Aus der Region, für die Region</span>
+                <h2 class="title">Persönliche Kerzen aus Balingen.</h2>
+                <p class="muted text-light">Individuell gestaltete Spezialkerzen findet man im Zollernalbkreis kaum. Bei uns entstehen sie in Handarbeit – für Familien aus Balingen und der ganzen Umgebung.</p>
+                <ul class="places">
+                    <li>Balingen</li><li>Albstadt</li><li>Hechingen</li><li>Geislingen</li><li>Rosenfeld</li>
+                    <li>Meßstetten</li><li>Haigerloch</li><li>Dotternhausen</li><li>Rottweil</li><li>Zollernalbkreis</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section bg-sand">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Galerie</span>
+                    <h2 class="title">Aus unserer Werkstatt.</h2>
+                    <p class="muted text-light">Ein kleiner Einblick in Kerzen, die wir für unsere Kundinnen und Kunden gestaltet haben.</p>
+                </div>
+                <div class="gallery" data-galerie="alle" data-limit="6"></div>
+                <p class="center" style="margin-top:2.5rem"><a href="/galerie/" class="btn btn--outline">Zur ganzen Galerie</a></p>
+            </div>
+        </section>
+
+        <section class="section bg-paper">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">So einfach geht's</span>
+                    <h2 class="title">So entsteht eure Kerze.</h2>
+                </div>
                 <div class="reveal">
-                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Rohstoffe</span>
-                    <h2 class="text-4xl lg:text-5xl font-serif mb-10 text-primary">Ehrliche Materialien.</h2>
-                    <p class="text-textlight font-light text-lg mb-12">
-                        Wir arbeiten mit dem, was die Natur hergibt – und dem, was andere wegwerfen.
-                    </p>
-
-                    <div class="space-y-12">
-                        <div>
-                            <h3 class="text-2xl font-serif mb-3 text-primary">Bienen- & Rapswachs</h3>
-                            <p class="text-textlight leading-relaxed font-light">
-                                100% reines Bienenwachs duftet natürlich nach Honig und reinigt die Luft beim brennen. Rapswachs aus der Region ist die vegane Alternative – brennt sauber, rußfrei und ohne Geruch.
-                            </p>
-                        </div>
-                        
-                        <div class="w-full h-[1px] bg-primary/10"></div>
-                        
-                        <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
-                            <img src="bienenwachs.jpg" alt="Natürliches Bienenwachs und Docht für handgegossene Kerzen">
-                        </div>
-
-                        <div>
-                            <h3 class="text-2xl font-serif mb-3 text-primary">Upcycling & Paraffin</h3>
-                            <p class="text-textlight leading-relaxed font-light">
-                                Wir sammeln Kerzenreste und gießen daraus neue Kerzen. Für klare, klassische Formen nutzen wir hochwertiges Paraffin.
-                            </p>
-                        </div>
-                    </div>
+                <ol class="steps">
+                    <li>
+                        <h3>Anfrage</h3>
+                        <p>Schreibt uns per WhatsApp oder E-Mail: Anlass, Termin, Namen und eure Ideen. Gerne mit Fotos von Einladung, Deko oder Lieblingsmotiv.</p>
+                    </li>
+                    <li>
+                        <h3>Entwurf</h3>
+                        <p>Wir besprechen mit euch Form, Farben, Schrift und Motiv – und nennen euch den Preis. Unverbindlich.</p>
+                    </li>
+                    <li>
+                        <h3>Handarbeit</h3>
+                        <p>In unserer Werkstatt in Balingen gießen und verzieren wir eure Kerze von Hand. Jede ein Unikat.</p>
+                    </li>
+                    <li>
+                        <h3>Abholung</h3>
+                        <p>Ihr holt eure Kerze bei uns in Balingen ab – den Termin stimmen wir gemeinsam ab.</p>
+                    </li>
+                </ol>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="anlaesse" class="py-32 bg-paper">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <section id="manufaktur" class="section bg-sand">
+            <div class="container split split--reverse">
                 <div class="reveal">
-                    <div class="aspect-5-4 shadow-lg hover-zoom bg-secondary">
-                        <img src="anlass.jpg" alt="Individuelle Taufkerze mit persönlicher Gravur">
-                    </div>
+                    <span class="eyebrow">Die Macher</span>
+                    <h2 class="title">Vier Hände, <br>eine Werkstatt.</h2>
+                    <p class="lead">Wir sind Armin und Monika. In unserer Werkstatt in Balingen gießen wir jede Kerze von Hand.</p>
+                    <p class="lead">Keine Fließbandware. Jede Kerze entsteht in Ruhe, mit der Zeit, die sie braucht. Das macht den Unterschied, wenn ihr sie anzündet.</p>
                 </div>
-
                 <div class="reveal">
-                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Lebensbegleiter</span>
-                    <h2 class="text-4xl lg:text-5xl font-serif mb-8 text-primary">Kerzen für <br>Meilensteine.</h2>
-                    <p class="text-textlight text-lg font-light leading-relaxed">
-                        Ob Taufe, Hochzeit oder Jubiläum – wir gestalten die Kerze für euren besonderen Tag.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="design" class="py-32 bg-secondary">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="reveal order-2 lg:order-1">
-                    <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Atmosphäre</span>
-                    <h2 class="text-4xl lg:text-5xl font-serif mb-10 text-primary">Duft & Design.</h2>
-                    
-                    <div class="space-y-12">
-                        <div class="bg-paper p-8 rounded-lg shadow-sm">
-                            <h3 class="text-2xl font-serif mb-3 text-primary">Duftwachsmelts</h3>
-                            <p class="text-textlight leading-relaxed font-light text-sm">
-                                Passend zur Jahreszeit in verschiedenen Duftnoten. Frische im Frühling, Wärme im Winter.
-                            </p>
-                        </div>
-                        <div class="bg-paper p-8 rounded-lg shadow-sm">
-                            <h3 class="text-2xl font-serif mb-3 text-primary">Keraflott Deko</h3>
-                            <p class="text-textlight leading-relaxed font-light text-sm">
-                                Untersetzer, Teelichthalter und Figuren aus Keramikgießmasse. Schlicht, matt, modern.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reveal order-1 lg:order-2">
-                    <div class="aspect-5-4 shadow-xl hover-zoom bg-paper">
-                        <img src="gesteck.jpg" alt="Kerze fur ein Gesteck trapiert">
+                    <div class="media">
+                        <img src="/team.jpg" width="1500" height="1200" loading="lazy" alt="Armin und Monika beim Kerzengießen in ihrer Werkstatt in Balingen">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="sammelstellen" class="py-32 bg-paper">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <div class="reveal">
-                <span class="text-accent uppercase tracking-widest text-xs font-bold mb-6 block">Gemeinsam Handeln</span>
-                <h2 class="text-4xl lg:text-6xl font-serif mb-8 text-primary">Wachs ist wertvoll.</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12 text-left bg-secondary p-10 md:p-16 rounded-2xl mt-12">
+        <section id="material" class="section bg-paper">
+            <div class="container container--narrow reveal">
+                <span class="eyebrow">Rohstoffe</span>
+                <h2 class="title">Ehrliche Materialien.</h2>
+                <p class="lead">Wir arbeiten mit dem, was die Natur hergibt – und dem, was andere wegwerfen.</p>
+
+                <h3 style="font-size:1.6rem;margin-top:3rem">Bienen- &amp; Rapswachs</h3>
+                <p class="muted text-light">100 % reines Bienenwachs duftet natürlich nach Honig. Rapswachs aus der Region ist die vegane Alternative – es brennt sauber, rußarm und ohne Eigengeruch.</p>
+
+                <hr class="divider">
+                <div class="media">
+                    <img src="/bienenwachs.jpg" width="1080" height="1091" loading="lazy" alt="Natürliches Bienenwachs und Docht für handgegossene Kerzen">
+                </div>
+
+                <h3 style="font-size:1.6rem;margin-top:3rem">Upcycling &amp; Paraffin</h3>
+                <p class="muted text-light">Wir sammeln Kerzenreste und gießen daraus neue Kerzen. Für klare, klassische Formen nutzen wir hochwertiges Paraffin.</p>
+            </div>
+        </section>
+
+        <section id="design" class="section bg-sand">
+            <div class="container split">
+                <div class="reveal">
+                    <span class="eyebrow">Atmosphäre</span>
+                    <h2 class="title">Duft &amp; Design.</h2>
+                    <div class="stack">
+                        <div class="panel">
+                            <h3>Duftwachsmelts</h3>
+                            <p>Passend zur Jahreszeit in verschiedenen Duftnoten. Frische im Frühling, Wärme im Winter.</p>
+                        </div>
+                        <div class="panel">
+                            <h3>Keraflott Deko</h3>
+                            <p>Untersetzer, Teelichthalter und Figuren aus Keramikgießmasse. Schlicht, matt, modern.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="media">
+                        <img src="/gesteck.jpg" width="1500" height="1200" loading="lazy" alt="Kerze in einem Gesteck arrangiert">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-paper">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Gut zu wissen</span>
+                    <h2 class="title">Häufige Fragen.</h2>
+                </div>
+                <div class="faq reveal">
+                <details>
+                    <summary>Was kostet eine persönliche Kerze?</summary>
+                    <div><p>Das hängt von Größe, Wachs und Aufwand der Gestaltung ab. Schreibt uns eure Wünsche – ihr bekommt ein unverbindliches Angebot, bevor wir loslegen.</p></div>
+                </details>
+                <details>
+                    <summary>Wie früh sollte ich bestellen?</summary>
+                    <div><p>Am besten einige Wochen vor eurem Termin, damit genug Zeit für Absprache und Handarbeit bleibt. Es ist knapp? Fragt trotzdem – wir sagen euch ehrlich, ob es klappt.</p></div>
+                </details>
+                <details>
+                    <summary>Kann ich ein eigenes Motiv mitbringen?</summary>
+                    <div><p>Sehr gern. Schickt uns ein Foto, eine Skizze oder z. B. die Einladungskarte – wir greifen Motiv und Farben auf.</p></div>
+                </details>
+                <details>
+                    <summary>Wie bekomme ich meine Kerze?</summary>
+                    <div><p>Ihr holt sie in unserer Werkstatt in der Hebsackstraße 3 in Balingen ab. Den Termin vereinbaren wir mit euch. Versand? Sprecht uns einfach an.</p></div>
+                </details>
+                <details>
+                    <summary>Woraus sind eure Kerzen?</summary>
+                    <div><p>Wir arbeiten mit Bienenwachs, Rapswachs und hochwertigem Paraffin – und gießen aus gesammelten Kerzenresten neue Kerzen. Welches Wachs zu eurer Kerze passt, besprechen wir gemeinsam.</p></div>
+                </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="sammelstellen" class="section bg-paper" style="padding-top:0">
+            <div class="container container--narrow center reveal">
+                <span class="eyebrow">Gemeinsam handeln</span>
+                <h2 class="title">Wachs ist wertvoll.</h2>
+                <div class="collect">
                     <div>
-                        <h3 class="font-serif text-3xl mb-4 text-primary">Sammelstellen</h3>
-                        <p class="text-textlight font-light mb-8 leading-relaxed">
-                            Kerzenreste? Bringt sie vorbei. <br>Wir gießen daraus etwas Neues.
-                        </p>
+                        <h3>Sammelstellen</h3>
+                        <p class="muted text-light">Kerzenreste? Bringt sie vorbei. <br>Wir gießen daraus etwas Neues.</p>
                     </div>
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="font-bold text-sm uppercase tracking-widest mb-2 text-primary">📍 Atelier Kerzenküche</h4>
-                            <p class="text-textlight">Hebsackstraße 3, 72336 Balingen</p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm uppercase tracking-widest mb-2 text-primary/50">📍 Weitere Sammelstellen</h4>
-                            <p class="text-textlight/70">Bald verfügbar</p>
-                        </div>
+                    <div>
+                        <h4>📍 Atelier Kerzenküche</h4>
+                        <p class="muted">Hebsackstraße 3, 72336 Balingen</p>
+                        <h4 style="opacity:.5">📍 Weitere Sammelstellen</h4>
+                        <p class="muted" style="opacity:.7;margin:0">Bald verfügbar</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="kontakt" class="py-32 bg-primary text-paper text-center">
-        <div class="max-w-3xl mx-auto px-6 lg:px-8 reveal">
-            <h3 class="text-4xl lg:text-5xl font-serif mb-8">Wunschkerze bestellen?</h3>
-            <p class="text-paper/80 text-lg font-light mb-16 leading-relaxed max-w-xl mx-auto">
-                Wir beraten euch persönlich – damit eure Kerze genau so wird, wie ihr sie euch vorstellt.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://wa.me/491741941927" class="group flex items-center justify-center gap-3 bg-paper text-primary px-8 py-4 rounded-full hover:bg-accent hover:text-white transition-all">
-                    <span>WhatsApp</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-                <a href="mailto:monikagogoll@gmx.de" class="group flex items-center justify-center gap-3 border border-paper/30 text-paper px-8 py-4 rounded-full hover:border-paper transition-all">
-                    <span>E-Mail</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
+        <section id="kontakt" class="section bg-dark contact">
+            <div class="container container--narrow reveal">
+                <span class="eyebrow">Kontakt</span>
+                <h2>Wunschkerze anfragen?</h2>
+                <p class="lead">Wir beraten euch persönlich – damit eure Kerze genau so wird, wie ihr sie euch vorstellt. Preise je nach Kerze und Gestaltung auf Anfrage.</p>
+                <div class="btn-row btn-row--center">
+                    <a href="https://wa.me/491741941927?text=Hallo%20Monika%20und%20Armin%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wunschkerze.%0A%0AAnlass%3A%0ATermin%3A%0AMeine%20Idee%3A" class="btn btn--light" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 00-.8.4 3.4 3.4 0 00-1 2.5 5.9 5.9 0 001.2 3.1 13.5 13.5 0 005.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 002.1-1.4 2.5 2.5 0 00.2-1.5c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8zm0-21.6A11.8 11.8 0 001.9 18l-1.7 6 6.2-1.6A11.8 11.8 0 1012 .2z"/></svg><span>Per WhatsApp anfragen</span></a>
+                    <a href="mailto:monikagogoll@gmx.de" class="btn btn--ghost-light"><span>E-Mail schreiben</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
+                </div>
+                <p class="contact-meta">
+                    Telefon: <a href="tel:+491741941927">0174 194 19 27</a> &nbsp;·&nbsp; Werkstatt: Hebsackstraße 3, 72336 Balingen<br>
+                    Abholung nach Absprache
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="bg-paper pt-20 pb-10 border-t border-secondary">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-12 mb-16">
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
                 <div>
-                    <h3 class="font-serif text-2xl font-bold mb-6 text-primary">Kerzenküche</h3>
-                    <p class="text-textlight text-sm leading-relaxed">
-                        Handgegossen in Balingen.<br>
-                        Von Armin & Monika.
-                    </p>
+                    <h3>Kerzenküche</h3>
+                    <p>Handgegossene und persönlich gestaltete Kerzen aus Balingen.<br>Von Armin &amp; Monika.</p>
                 </div>
                 <div>
-                    <h4 class="uppercase text-xs font-bold tracking-widest mb-6 text-primary">Kontakt</h4>
-                    <ul class="space-y-4 text-sm text-textlight">
+                    <h4>Anlässe</h4>
+                    <ul>
+                        <li><a href="/taufkerzen/">Taufkerzen</a></li>
+                        <li><a href="/kommunion-konfirmation/">Kommunion &amp; Konfirmation</a></li>
+                        <li><a href="/hochzeitskerzen/">Hochzeitskerzen</a></li>
+                        <li><a href="/trauerkerzen/">Trauer &amp; Gedenken</a></li>
+                        <li><a href="/galerie/">Galerie</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul>
                         <li>Hebsackstr. 3, 72336 Balingen</li>
-                        <li><a href="mailto:monikagogoll@gmx.de" class="hover:text-primary transition-colors">monikagogoll@gmx.de</a></li>
+                        <li><a href="tel:+491741941927">0174 194 19 27</a></li>
+                        <li><a href="mailto:monikagogoll@gmx.de">monikagogoll@gmx.de</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="uppercase text-xs font-bold tracking-widest mb-6 text-primary">Rechtliches</h4>
-                    <ul class="space-y-4 text-sm text-textlight">
-                        <li><button onclick="toggleModal('impressum')" class="hover:text-primary transition-colors">Impressum</button></li>
-                        <li><button onclick="toggleModal('datenschutz')" class="hover:text-primary transition-colors">Datenschutz</button></li>
-                        <li><button onclick="toggleModal('widerruf')" class="hover:text-primary transition-colors">Widerruf</button></li>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="/impressum/">Impressum</a></li>
+                        <li><a href="/datenschutz/">Datenschutz</a></li>
+                        <li><a href="/widerruf/">Bestellung &amp; Widerruf</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-secondary pt-8 text-center text-xs text-textlight uppercase tracking-widest">
-                &copy; 2026 Kerzenküche Balingen
-            </div>
+            <div class="footer-bottom">&copy; 2026 Kerzenküche Balingen</div>
         </div>
     </footer>
 
-    <div id="impressum" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
-        <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
-            <button onclick="toggleModal('impressum')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
-            <h3 class="font-serif text-3xl mb-6">Impressum</h3>
-            <p class="text-gray-600 leading-relaxed">Monika Gogoll<br>Hebsackstr. 3, 72336 Balingen<br>monikagogoll@gmx.de<br><br>Kleinunternehmer §19 UStG.</p>
-        </div>
-    </div>
-    
-    <div id="datenschutz" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
-        <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
-            <button onclick="toggleModal('datenschutz')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
-            <h3 class="font-serif text-3xl mb-6">Datenschutz</h3>
-            <p class="text-gray-600 leading-relaxed">Keine Cookies. Daten nur zur Kontaktaufnahme.</p>
-        </div>
-    </div>
-    
-    <div id="widerruf" class="fixed inset-0 z-[100] hidden bg-primary/40 backdrop-blur-sm flex items-center justify-center p-6">
-        <div class="bg-paper max-w-lg w-full p-10 rounded-xl relative shadow-2xl text-primary">
-            <button onclick="toggleModal('widerruf')" class="absolute top-6 right-6 text-gray-400 hover:text-black">✕</button>
-            <h3 class="font-serif text-3xl mb-6">Widerruf</h3>
-            <p class="text-gray-600 leading-relaxed">14 Tage Widerrufsrecht. Ausschluss bei personalisierter Ware.</p>
-        </div>
-    </div>
-
-    <script>
-        // Scroll Animation Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Modal Logic
-        function toggleModal(id) {
-            const modal = document.getElementById(id);
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        }
-    </script>
+    <script src="/galerie/bilder.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

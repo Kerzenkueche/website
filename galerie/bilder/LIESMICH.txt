@@ -1,0 +1,1 @@
+Hier kommen die Galerie-Bilder hinein (siehe galerie/bilder.js).
