@@ -42,7 +42,10 @@
         kommunion: 'Kommunion & Konfirmation',
         hochzeit: 'Hochzeit',
         trauer: 'Trauer & Gedenken',
-        weitere: 'Weitere Anlässe'
+        geburtstag: 'Geburtstag & Jubiläum',
+        deko: 'Deko- & Formkerzen',
+        duft: 'Duft & Keramik',
+        weitere: 'Weitere'
     };
     var WHATSAPP = 'https://wa.me/491741941927?text=' +
         encodeURIComponent('Hallo Monika und Armin, habt ihr ein paar Beispielbilder für mich? Ich interessiere mich für eine Kerze zum Anlass: ');
@@ -150,7 +153,7 @@
         // Galerie-Seite mit Filter: nur Anlässe anzeigen, die Bilder haben
         var vorhanden = {};
         BILDER.forEach(function (b) { vorhanden[b.anlass] = true; });
-        var keys = ['alle'].concat(Object.keys(ANLAESSE));
+        var keys = ['alle'].concat(Object.keys(ANLAESSE).filter(function (k) { return vorhanden[k]; }));
 
         function setActive(key) {
             filterBar.querySelectorAll('button').forEach(function (bt) {
@@ -165,7 +168,6 @@
             bt.type = 'button';
             bt.setAttribute('data-key', key);
             bt.textContent = key === 'alle' ? 'Alle' : ANLAESSE[key];
-            if (key !== 'alle' && !vorhanden[key]) bt.textContent += ' (bald)';
             bt.addEventListener('click', function () {
                 setActive(key);
                 if (history.replaceState) history.replaceState(null, '', key === 'alle' ? location.pathname : '#' + key);
@@ -175,6 +177,6 @@
         });
 
         var start = location.hash.replace('#', '');
-        setActive(ANLAESSE[start] ? start : 'alle');
+        setActive(vorhanden[start] ? start : 'alle');
     });
 })();
