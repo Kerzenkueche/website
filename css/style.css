@@ -65,8 +65,11 @@ h1, h2, h3, h4 {
     line-height: 1.15;
     margin: 0 0 1rem;
     color: var(--primary);
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+            hyphens: auto;
 }
-p { margin: 0 0 1.25rem; }
+p { margin: 0 0 1.25rem; overflow-wrap: break-word; }
 
 .skip-link {
     position: absolute; left: -9999px; top: 0;
@@ -439,6 +442,7 @@ p { margin: 0 0 1.25rem; }
 .prose a { color: var(--accent-dark); }
 .prose .box { background: var(--sand); padding: 1.5rem; border-radius: var(--radius); margin: 1.5rem 0; }
 .prose .box p:last-child { margin: 0; }
+.prose .box p { overflow-wrap: anywhere; }
 
 /* ---------- Footer ---------- */
 
