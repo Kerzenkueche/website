@@ -169,11 +169,7 @@
             img.loading = 'lazy';
             img.decoding = 'async';
             btn.appendChild(img);
-            if (b.titel) {
-                var cap = document.createElement('figcaption');
-                cap.textContent = b.titel;
-                btn.appendChild(cap);
-            }
+            // Beschreibung nur in der Großansicht zeigen, nicht über dem Vorschaubild
             btn.addEventListener('click', function () { openLightbox(list, i); });
             fig.appendChild(btn);
             container.appendChild(fig);
