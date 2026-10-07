@@ -495,14 +495,15 @@ p { margin: 0 0 1.25rem; overflow-wrap: break-word; }
 
 .site-footer { background: var(--sand); padding: 4.5rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; margin-bottom: 3rem; }
-.footer-brand, .footer-grid > div:last-child { grid-column: 1 / -1; }
-@media (min-width: 1024px) {
-    .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.3fr; gap: 3rem; margin-bottom: 3.5rem; }
-    .footer-brand, .footer-grid > div:last-child { grid-column: auto; }
+.footer-brand { grid-column: 1 / -1; }
+@media (min-width: 768px) {
+    .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3.5rem; }
+    .footer-brand { grid-column: auto; }
 }
-.footer-brand .logo { display: inline-block; font-size: 1.75rem; margin-bottom: 1rem; }
-.footer-brand p { max-width: 22rem; }
-.site-footer .footer-sign { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--accent-dark); margin: 0; }
+.footer-brand .logo { display: inline-block; font-size: 1.75rem; margin-bottom: 0.25rem; }
+.site-footer .footer-sign { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--accent-dark); margin: 0 0 1rem; }
+.site-footer address { font-style: normal; font-size: 0.9rem; line-height: 1.7; color: var(--muted); margin-bottom: 1.25rem; font-variant-numeric: lining-nums; }
+.footer-note { display: inline-block; margin-top: 0.35rem; font-size: 0.8rem; color: var(--accent-dark); }
 .site-footer h4 {
     font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
     margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--line);
@@ -512,6 +513,7 @@ p { margin: 0 0 1.25rem; overflow-wrap: break-word; }
 .site-footer li, .site-footer p { font-size: 0.9rem; color: var(--muted); }
 .site-footer a { text-decoration: none; transition: color .2s; }
 .site-footer a:hover { color: var(--primary); }
+.footer-contact li { margin-bottom: 0.55rem; }
 .footer-contact a { display: inline-flex; align-items: flex-start; gap: 0.7rem; }
 .footer-contact svg { width: 1.1rem; height: 1.1rem; flex: none; margin-top: 0.15rem; color: var(--accent-dark); }
 .footer-contact span { overflow-wrap: anywhere; }
