@@ -169,7 +169,7 @@ def contact(wa_text, title="Wunschkerze anfragen?", text="Wir beraten euch pers�
 
 def footer(gallery=False):
     links = "\n".join(f'                        <li><a href="/{s}/">{escape(n)}</a></li>' for s, n in ANLAESSE)
-    gal = '\n    <script src="/galerie/bilder.js?v=3"></script>' if gallery else ""
+    gal = '\n    <script src="/galerie/bilder.js?v=4"></script>' if gallery else ""
     return f"""    </main>
 
     <footer class="site-footer">
@@ -217,7 +217,7 @@ def footer(gallery=False):
         </div>
     </footer>
 {gal}
-    <script src="/js/main.js?v=10"></script>
+    <script src="/js/main.js?v=11"></script>
 </body>
 </html>
 """
@@ -291,7 +291,7 @@ _js = os.path.join(ROOT, "galerie", "bilder.js").replace("\\", "/")
 GALERIE = json.loads(subprocess.run(["node", "-e", "global.window={};require('" + _js + "');process.stdout.write(JSON.stringify(window.GALERIE))"],
                                     capture_output=True, text=True, encoding="utf-8", check=True).stdout)
 KURZ = {"taufe": "Taufe", "kommunion": "Kommunion", "hochzeit": "Hochzeit", "trauer": "Gedenken",
-        "geburtstag": "Geburtstag", "deko": "Deko & Form", "duft": "Duft", "weitere": "Kerze"}
+        "geburtstag": "Geburtstag", "schule": "Schulanfang", "deko": "Deko & Form", "duft": "Duft", "weitere": "Kerze"}
 
 
 def thumb(datei):
@@ -299,7 +299,7 @@ def thumb(datei):
 
 
 def static_gallery(key, limit):
-    items = [b for b in GALERIE if key in ("alle", "") or b["anlass"] == key]
+    items = [b for b in GALERIE if (b.get("auswahl") if key == "auswahl" else (key in ("alle", "") or b["anlass"] == key))]
     if limit:
         items = items[:limit]
     out = []
@@ -400,7 +400,7 @@ index = head(
                         </div>
                     </a>
                     <a href="/hochzeitskerzen/" class="card reveal">
-                        <div class="media"><img src="/galerie/bilder/windlicht-gepresste-blueten.jpg" width="1600" height="1600" loading="lazy" alt="Windlicht aus Wachs mit gepressten Blüten"></div>
+                        <div class="media"><img src="/galerie/bilder/hochzeitskerze-blaetterkranz-quer.jpg" width="1500" height="1200" loading="lazy" alt="Hochzeitskerze mit Namen, Datum und Blätterkranz"></div>
                         <div class="card-body">
                             <h3>Hochzeitskerzen</h3>
                             <p>Mit euren Namen und eurem Datum – für die Trauung und jeden Hochzeitstag danach.</p>
@@ -408,7 +408,7 @@ index = head(
                         </div>
                     </a>
                     <a href="/trauerkerzen/" class="card reveal">
-                        <div class="media"><img src="/galerie/bilder/kerze-herz-haende-quer.jpg" width="1500" height="1200" loading="lazy" alt="Kerze „Herz in Händen“ in warmem Apricot"></div>
+                        <div class="media"><img src="/galerie/bilder/trauerkerze-fuer-immer-in-unserem-herzen-quer.jpg" width="1500" height="1200" loading="lazy" alt="Trauerkerze mit goldenem Kreuz: Für immer in unserem Herzen"></div>
                         <div class="card-body">
                             <h3>Trauer &amp; Gedenken</h3>
                             <p>Behutsam gestaltete Kerzen, die an einen geliebten Menschen erinnern.</p>
@@ -427,7 +427,7 @@ index = head(
                         <div class="card-body">
                             <span class="eyebrow">Eure Idee</span>
                             <h3>Und alles andere.</h3>
-                            <p>Deko- und Formkerzen oder ein ganz eigener Anlass – erzählt uns eure Idee, wir sagen euch, was möglich ist.</p>
+                            <p>Schulanfang, Deko- und Formkerzen oder ein ganz eigener Anlass – erzählt uns eure Idee, wir sagen euch, was möglich ist.</p>
                             <span class="link-arrow">Idee schicken</span>
                         </div>
                     </a>
@@ -454,7 +454,7 @@ index = head(
                     <h2 class="title">Frisch aus der Kerzenküche.</h2>
                     <p class="muted text-light">Ein kleiner Einblick in Kerzen, die wir für unsere Kundinnen und Kunden gestaltet haben.</p>
                 </div>
-                <div class="gallery" data-galerie="alle" data-limit="6"></div>
+                <div class="gallery" data-galerie="auswahl" data-limit="6"></div>
                 <p class="center" style="margin-top:2.5rem"><a href="/galerie/" class="btn btn--outline">Zur ganzen Galerie</a></p>
             </div>
         </section>
@@ -582,8 +582,8 @@ PAGES = [
         options=[
             ("Name &amp; Datum", "Der Name eures Kindes, auf Wunsch mit Geburts- und Taufdatum."),
             ("„Zur Taufe“", "Der klassische Schriftzug in Silber."),
-            ("Symbole", "Kreuz, Taube, Fisch, Lebensbaum, Alpha &amp; Omega, Engel, Herz, Schmetterling oder Babyfüßchen."),
-            ("Farben", "Zartes Rosa, kräftiges Blau oder Grün – mit Silber und kleinen Glitzersteinen."),
+            ("Symbole", "Kreuz, Taube, Fisch, Lebensbaum, Sonne, Alpha &amp; Omega, Engel, Herz, Schmetterling oder Babyfüßchen."),
+            ("Farben &amp; Röschen", "Zartes Rosa, Bordeaux, kräftiges Blau oder Grün – mit Silber, Glitzersteinen und kleinen Röschen."),
             ("Band &amp; Spitze", "Ein Zierband oder eine Spitzenborte rund um die Kerze."),
             ("Material", "Wir beraten euch, welches Wachs zu eurer Kerze passt."),
         ],
@@ -636,11 +636,11 @@ PAGES = [
         eyebrow="Hochzeit",
         h1="Hochzeitskerzen <em>mit euren Namen.</em>",
         intro="Eure Hochzeitskerze brennt bei der Trauung – und danach an jedem Hochzeitstag. Wir gestalten sie mit euren Namen und eurem Datum.",
-        img=("/galerie/bilder/windlicht-gepresste-blueten.jpg", 1600, 1600, "Windlicht aus Wachs mit gepressten Blüten"),
+        img=("/galerie/bilder/hochzeitskerze-blaetterkranz-quer.jpg", 1500, 1200, "Hochzeitskerze mit Namen, Datum und Blätterkranz in Blaugrün und Gold"),
         options=[
-            ("Namen &amp; Datum", "Eure Vornamen und euer Hochzeitsdatum."),
-            ("Verzierung", "Herzen, Blüten, Ranken oder ein Kreuz."),
-            ("Farben", "Schlichtes Weiß mit Silber oder Gold – oder in euren Farben."),
+            ("Namen &amp; Datum", "Eure Vornamen, verbunden mit „&amp;“, und euer Hochzeitsdatum."),
+            ("Blätterkranz", "Ein zarter Kranz aus Blättern rund um eure Namen."),
+            ("Goldene Akzente", "Schrift und feine Zierlinien in Gold."),
             ("Für jede Trauung", "Für die kirchliche Trauung, das Standesamt oder die freie Trauung."),
         ],
         note="Ihr habt schon eine Vorstellung? Schickt uns gern Fotos von Ideen, die euch gefallen – wir sagen euch, was sich umsetzen lässt.",
@@ -660,10 +660,12 @@ PAGES = [
         eyebrow="Trauer &amp; Gedenken",
         h1="Kerzen, die <em>erinnern.</em>",
         intro="Eine Kerze kann Trost spenden und an einen geliebten Menschen erinnern. Wir gestalten Trauer- und Gedenkkerzen behutsam und persönlich – für die Trauerfeier, das Grab oder einen Platz im Zuhause.",
-        img=("/galerie/bilder/kerze-herz-haende-quer.jpg", 1500, 1200, "Kerze „Herz in Händen“ in warmem Apricot"),
+        img=("/galerie/bilder/trauerkerze-fuer-immer-in-unserem-herzen-quer.jpg", 1500, 1200, "Trauerkerze mit goldenem Kreuz: Für immer in unserem Herzen"),
         options=[
-            ("Name &amp; Lebensdaten", "Name, Geburts- und Sterbedatum."),
-            ("Symbole", "Kreuz, Engel, Lebensbaum, Rosen, Herz oder Schmetterling."),
+            ("Kurzer Text", "Zum Beispiel „Für immer in unserem Herzen“ oder „Stiller Abschied“."),
+            ("Kreuz", "In Gold oder Silber – mit feinen Strahlen oder zarten Blättern."),
+            ("Name &amp; Lebensdaten", "Auf Wunsch Name, Geburts- und Sterbedatum."),
+            ("Weitere Symbole", "Engel, Lebensbaum, Rosen, Herz oder Schmetterling."),
             ("Farben", "Schlicht und ruhig – oder in den Lieblingsfarben des Verstorbenen."),
             ("Für die Trauerfeier", "Als Kerze für die Trauerfeier oder Beisetzung."),
             ("Zum Gedenken", "Für den Jahrestag, Allerheiligen oder einen Erinnerungsplatz zu Hause."),
@@ -691,9 +693,9 @@ PAGES.append(dict(
     intro="Zum runden Geburtstag oder Jubiläum: Eine persönlich gestaltete Kerze ist ein Geschenk, das in Erinnerung bleibt – mit Name, Zahl und den Lieblingsblumen des Geburtstagskindes.",
     img=("/galerie/bilder/geburtstagskerzen-jubilaeum.jpg", 1600, 1600, "Persönliche Geburtstagskerzen zum 60., 77., 80. und 84. Geburtstag"),
     options=[
-        ("Name &amp; Zahl", "Der Name des Geburtstagskindes und die große Zahl – der Blickfang jeder Geburtstagskerze."),
-        ("Datum", "Das Geburtsdatum oder das Datum des Festes."),
-        ("Kurzer Gruß", "Zum Beispiel „Zum 80. Geburtstag“ oder „Herzlichen Glückwunsch“."),
+        ("Name, Zahl &amp; Datum", "Der Name des Geburtstagskindes, die große Zahl und das Datum – der Blickfang jeder Geburtstagskerze."),
+        ("Kurzer Gruß", "Zum Beispiel „Zum 80. Geburtstag“, „Herzlichen Glückwunsch“ oder „Zum Jubiläum“."),
+        ("Bilder &amp; Fotos", "Auch ein Bild oder Foto kann auf die Kerze – wie bei unserer Jubiläumskerze."),
         ("Blumen", "Rosen, Sonnenblumen oder kleine blaue Blüten."),
         ("Herz &amp; Ranken", "Ein Herz um die Zahl, Ranken oder Schmetterlinge."),
         ("Verschiedene Formen", "Klassisch rund, geschwungen oder als spitze Bogenkerze."),
@@ -705,7 +707,7 @@ PAGES.append(dict(
         ("Was kostet eine Geburtstagskerze?",
          "Das hängt von Größe und Gestaltung ab. Schreibt uns eure Wünsche, ihr bekommt vorab ein unverbindliches Angebot."),
         ("Macht ihr auch Kerzen zum Jubiläum?",
-         "Ja – ebenfalls mit Namen, Datum und der passenden Zahl."),
+         "Ja – zum Beispiel mit „Zum Jubiläum“, Namen und auf Wunsch mit einem Bild. Ein Beispiel seht ihr in der Galerie."),
     ],
     wa="Hallo Monika und Armin, ich interessiere mich für eine Geburtstags-/Jubiläumskerze.\n\nName:\nWelcher Geburtstag/Anlass:\nDatum:\nLieblingsfarben/-blumen:",
     cta_title="Geburtstags- oder Jubiläumskerze anfragen",

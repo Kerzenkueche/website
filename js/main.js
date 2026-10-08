@@ -68,13 +68,14 @@
         hochzeit: 'Hochzeit',
         trauer: 'Trauer & Gedenken',
         geburtstag: 'Geburtstag & Jubiläum',
+        schule: 'Schulanfang',
         deko: 'Deko- & Formkerzen',
         duft: 'Duft & Keramik',
         weitere: 'Weitere'
     };
     var KURZ = {
         taufe: 'Taufe', kommunion: 'Kommunion', hochzeit: 'Hochzeit', trauer: 'Gedenken',
-        geburtstag: 'Geburtstag', deko: 'Deko & Form', duft: 'Duft', weitere: 'Kerze'
+        geburtstag: 'Geburtstag', schule: 'Schulanfang', deko: 'Deko & Form', duft: 'Duft', weitere: 'Kerze'
     };
     var WHATSAPP = 'https://wa.me/491741941927?text=' +
         encodeURIComponent('Hallo Monika und Armin, habt ihr ein paar Beispielbilder für mich? Ich interessiere mich für eine Kerze zum Anlass: ');
@@ -142,7 +143,11 @@
 
     function render(container, anlass) {
         var limit = parseInt(container.getAttribute('data-limit') || '0', 10);
-        var list = BILDER.filter(function (b) { return !anlass || anlass === 'alle' || b.anlass === anlass; });
+        // 'auswahl' = handverlesene Mischung für die Startseite (auswahl: true in bilder.js)
+        var list = BILDER.filter(function (b) {
+            if (anlass === 'auswahl') return b.auswahl;
+            return !anlass || anlass === 'alle' || b.anlass === anlass;
+        });
         if (limit) list = list.slice(0, limit);
         container.innerHTML = '';
 
