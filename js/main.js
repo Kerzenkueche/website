@@ -35,6 +35,15 @@
         });
     }
 
+    // ---------- Termine: vergangene Märkte ausblenden ----------
+    var heute = new Date(); heute.setHours(0, 0, 0, 0);
+    document.querySelectorAll('.termin[data-ende]').forEach(function (t) {
+        var d = new Date(t.getAttribute('data-ende') + 'T23:59:59');
+        if (d < heute) t.remove();
+    });
+    var terminSection = document.getElementById('termine');
+    if (terminSection && !terminSection.querySelector('.termin')) terminSection.hidden = true;
+
     // ---------- Schwebender WhatsApp-Button ----------
     // Übernimmt die vorausgefüllte Nachricht aus dem Kontaktbereich der jeweiligen Seite.
     var kontakt = document.getElementById('kontakt');

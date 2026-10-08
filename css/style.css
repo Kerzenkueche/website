@@ -290,6 +290,31 @@ p { margin: 0 0 1.25rem; overflow-wrap: break-word; }
     border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.9rem; background: var(--paper);
 }
 
+/* ---------- Termine ---------- */
+
+.termine { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 1rem; max-width: 980px; }
+@media (min-width: 768px) { .termine { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
+.termin {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    background: var(--sand); border-radius: 0.75rem; padding: 1.25rem;
+}
+.termin-datum {
+    flex: none; width: 5rem; padding: 0.7rem 0.4rem; text-align: center;
+    background: var(--primary); color: var(--paper); border-radius: 0.5rem;
+    font-variant-numeric: lining-nums;
+}
+.termin-tag { display: block; font-family: var(--serif); font-size: 1.3rem; line-height: 1.15; }
+.termin-monat { display: block; margin-top: 0.2rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.termine > li { min-width: 0; }
+.termin-info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.termin-info h3 { font-size: 1.25rem; margin: 0.1rem 0 0.3rem; }
+.termin-zeit { display: block; font-size: 0.9rem; color: var(--primary); margin-bottom: 0.5rem; }
+.termin-ort { display: inline-flex; gap: 0.45rem; align-items: flex-start; font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+.termin-ort svg { width: 1rem; height: 1rem; flex: none; margin-top: 0.15rem; color: var(--accent-dark); }
+.termin-ort:hover { color: var(--primary); }
+.termin:not([data-ende]) .termin-datum { background: var(--line); color: var(--muted); }
+.termin:not([data-ende]) .termin-tag { font-size: 1rem; }
+
 /* ---------- Ablauf ---------- */
 
 .steps { display: grid; gap: 2rem; counter-reset: step; list-style: none; margin: 0; padding: 0; }

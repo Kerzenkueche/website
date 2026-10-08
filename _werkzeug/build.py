@@ -55,7 +55,7 @@ def head(title, desc, path, schema=None, noindex=False):
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=17">
+    <link rel="stylesheet" href="/css/style.css?v=20">
     <script>document.documentElement.classList.add('js');</script>{schemas}
 </head>
 <body>
@@ -86,7 +86,7 @@ def header(active=""):
                     <li><a href="/galerie/"{cur("galerie")}>Galerie</a></li>
                     <li><a href="/#manufaktur">Manufaktur</a></li>
                     <li><a href="/#material">Material</a></li>
-                    <li><a href="/#sammelstellen">Sammelstellen</a></li>
+                    <li><a href="/#termine">Termine</a></li>
                 </ul>
 
                 <a href="#kontakt" class="nav-cta">Kontakt</a>
@@ -104,6 +104,7 @@ def header(active=""):
                     <li><a href="/galerie/">Galerie</a></li>
                     <li><a href="/#manufaktur">Manufaktur</a></li>
                     <li><a href="/#material">Material</a></li>
+                    <li><a href="/#termine">Termine</a></li>
                     <li><a href="/#sammelstellen">Sammelstellen</a></li>
                 </ul>
                 <a href="#kontakt" class="btn btn--primary">Kontakt &amp; Anfrage</a>
@@ -202,6 +203,7 @@ def footer(gallery=False):
                         <li><a href="/galerie/">Galerie</a></li>
                         <li><a href="/#manufaktur">Manufaktur</a></li>
                         <li><a href="/#material">Material</a></li>
+                        <li><a href="/#termine">Termine</a></li>
                         <li><a href="/#sammelstellen">Sammelstellen</a></li>
                     </ul>
                 </nav>
@@ -217,7 +219,7 @@ def footer(gallery=False):
         </div>
     </footer>
 {gal}
-    <script src="/js/main.js?v=11"></script>
+    <script src="/js/main.js?v=12"></script>
 </body>
 </html>
 """
@@ -332,6 +334,57 @@ def write(rel, content):
     print("geschrieben:", rel)
 
 
+
+# ==========================================================================
+# Termine – Märkte, auf denen ihr die Kerzenküche trefft
+# start/ende im Format JJJJ-MM-TT; ohne Datum erscheint "Termin folgt".
+# Vergangene Termine blendet js/main.js automatisch aus.
+# ==========================================================================
+TERMINE = [
+    dict(name="ALB-GOLD Adventsmarkt", start="2026-11-07", ende="2026-11-08", zeit="Sa &amp; So, 11–18 Uhr",
+         ort="ALB-GOLD Kundenzentrum, Klaus-Freidler-Straße 1, 72818 Trochtelfingen"),
+    dict(name="Christkindlesmarkt Balingen", start="2026-11-28", ende="2026-11-29", zeit="Sa &amp; So, 11–20 Uhr",
+         ort="Kirchplatz, 72336 Balingen"),
+    dict(name="Nikolausmarkt Heselwangen", start="", ende="", zeit="",
+         ort="Gemeindehaus Heselwangen, Bürgermeister-Jetter-Straße 7, 72336 Balingen"),
+    dict(name="Weihnachtsmarkt Frommern", start="", ende="", zeit="",
+         ort="72336 Balingen-Frommern"),
+]
+MONATE = ["Jan", "Feb", "März", "Apr", "Mai", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dez"]
+
+
+def termin_datum(t):
+    if not t["start"]:
+        return '<span class="termin-tag">Termin</span><span class="termin-monat">folgt</span>'
+    y1, m1, d1 = (int(x) for x in t["start"].split("-"))
+    y2, m2, d2 = (int(x) for x in (t["ende"] or t["start"]).split("-"))
+    if (m1, d1) == (m2, d2):
+        tag = f"{d1}."
+    elif m1 == m2:
+        tag = f"{d1}.–{d2}."
+    else:
+        tag = f"{d1}.{m1}.–{d2}.{m2}."
+    return f'<span class="termin-tag">{tag}</span><span class="termin-monat">{MONATE[m2 - 1]} {y2}</span>'
+
+
+def termine_html():
+    ts = sorted(TERMINE, key=lambda t: t["start"] or "9999")
+    items = []
+    for t in ts:
+        maps = "https://www.google.com/maps/search/?api=1&query=" + quote(t["ort"].replace("&amp;", "&"))
+        zeit = f'<span class="termin-zeit">{t["zeit"]}</span>' if t["zeit"] else '<span class="termin-zeit">Der genaue Termin steht noch nicht fest.</span>'
+        ende = f' data-ende="{t["ende"] or t["start"]}"' if t["start"] else ""
+        items.append(f"""                    <li class="termin"{ende}>
+                        <div class="termin-datum">{termin_datum(t)}</div>
+                        <div class="termin-info">
+                            <h3>{t["name"]}</h3>
+                            {zeit}
+                            <a href="{maps}" target="_blank" rel="noopener" class="termin-ort">{ICON_PIN}<span>{t["ort"]}</span></a>
+                        </div>
+                    </li>""")
+    return "\n".join(items)
+
+
 # ==========================================================================
 # Startseite
 # ==========================================================================
@@ -443,6 +496,19 @@ index = head(
                 <ul class="places">
                     <li>Balingen</li><li>Albstadt</li><li>Hechingen</li><li>Geislingen</li><li>Rosenfeld</li>
                     <li>Meßstetten</li><li>Haigerloch</li><li>Dotternhausen</li><li>Rottweil</li><li>Zollernalbkreis</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="termine" class="section section--tight bg-paper termine-section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Termine</span>
+                    <h2 class="title">Hier trefft ihr uns.</h2>
+                    <p class="muted text-light">Schaut an unserem Stand vorbei – dort könnt ihr unsere Kerzen in die Hand nehmen und eure Wunschkerze direkt mit uns besprechen.</p>
+                </div>
+                <ul class="termine reveal">
+{termine_html()}
                 </ul>
             </div>
         </section>
