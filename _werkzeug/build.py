@@ -169,7 +169,7 @@ def contact(wa_text, title="Wunschkerze anfragen?", text="Wir beraten euch pers√
 
 def footer(gallery=False):
     links = "\n".join(f'                        <li><a href="/{s}/">{escape(n)}</a></li>' for s, n in ANLAESSE)
-    gal = '\n    <script src="/galerie/bilder.js?v=5"></script>' if gallery else ""
+    gal = '\n    <script src="/galerie/bilder.js?v=6"></script>' if gallery else ""
     return f"""    </main>
 
     <footer class="site-footer">
@@ -500,7 +500,7 @@ index = head(
 
                 <hr class="divider">
                 <div class="media">
-                    <img src="/galerie/bilder/formkerzen-creme-geflochten.jpg" width="1200" height="1500" loading="lazy" alt="Handgegossene Formkerzen in Creme und Natur">
+                    <img src="/galerie/bilder/formkerzen-creme-gedreht.jpg" width="1080" height="1091" loading="lazy" alt="Handgegossene Formkerzen in Creme und Honiggelb">
                 </div>
 
                 <h3 style="font-size:1.6rem;margin-top:3rem">Upcycling &amp; Paraffin</h3>
