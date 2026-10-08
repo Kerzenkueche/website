@@ -345,10 +345,10 @@ TERMINE = [
          ort="ALB-GOLD Kundenzentrum, Klaus-Freidler-Straße 1, 72818 Trochtelfingen"),
     dict(name="Christkindlesmarkt Balingen", start="2026-11-28", ende="2026-11-29", zeit="Sa &amp; So, 11–20 Uhr",
          ort="Kirchplatz, 72336 Balingen"),
-    dict(name="Nikolausmarkt Heselwangen", start="", ende="", zeit="",
+    dict(name="Nikolausmarkt Heselwangen", start="2026-12-06", ende="2026-12-06", zeit="",
          ort="Gemeindehaus Heselwangen, Bürgermeister-Jetter-Straße 7, 72336 Balingen"),
-    dict(name="Weihnachtsmarkt Frommern", start="", ende="", zeit="",
-         ort="72336 Balingen-Frommern"),
+    dict(name="Christbaummarkt Frommern", start="2026-12-12", ende="2026-12-12", zeit="",
+         ort="Hindenburgplatz, 72336 Balingen-Frommern"),
 ]
 MONATE = ["Jan", "Feb", "März", "Apr", "Mai", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dez"]
 
@@ -372,7 +372,16 @@ def termine_html():
     items = []
     for t in ts:
         maps = "https://www.google.com/maps/search/?api=1&query=" + quote(t["ort"].replace("&amp;", "&"))
-        zeit = f'<span class="termin-zeit">{t["zeit"]}</span>' if t["zeit"] else '<span class="termin-zeit">Der genaue Termin steht noch nicht fest.</span>'
+        if t["zeit"]:
+            zeit_txt = t["zeit"]
+        elif t["start"]:
+            import datetime
+            WT = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
+            a = datetime.date.fromisoformat(t["start"]); b = datetime.date.fromisoformat(t["ende"] or t["start"])
+            zeit_txt = WT[a.weekday()] if a == b else f"{WT[a.weekday()]} bis {WT[b.weekday()]}"
+        else:
+            zeit_txt = "Der genaue Termin steht noch nicht fest."
+        zeit = f'<span class="termin-zeit">{zeit_txt}</span>'
         ende = f' data-ende="{t["ende"] or t["start"]}"' if t["start"] else ""
         items.append(f"""                    <li class="termin"{ende}>
                         <div class="termin-datum">{termin_datum(t)}</div>
