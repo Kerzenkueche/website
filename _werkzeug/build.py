@@ -170,7 +170,7 @@ def contact(wa_text, title="Wunschkerze anfragen?", text="Wir beraten euch pers�
 
 def footer(gallery=False):
     links = "\n".join(f'                        <li><a href="/{s}/">{escape(n)}</a></li>' for s, n in ANLAESSE)
-    gal = '\n    <script src="/galerie/bilder.js?v=6"></script>' if gallery else ""
+    gal = '\n    <script src="/galerie/bilder.js?v=7"></script>' if gallery else ""
     return f"""    </main>
 
     <footer class="site-footer">
@@ -658,7 +658,7 @@ PAGES = [
             ("Name &amp; Datum", "Der Name eures Kindes, auf Wunsch mit Geburts- und Taufdatum."),
             ("„Zur Taufe“", "Der klassische Schriftzug in Silber."),
             ("Symbole", "Kreuz, Taube, Fisch, Lebensbaum, Sonne, Alpha &amp; Omega, Engel, Herz, Schmetterling oder Babyfüßchen."),
-            ("Farben &amp; Röschen", "Zartes Rosa, Bordeaux, kräftiges Blau oder Grün – mit Silber, Glitzersteinen und kleinen Röschen."),
+            ("Farben &amp; Blüten", "Zartes Rosa, kräftiges Pink, Blau oder Grün – mit Silber, Glitzersteinen und kleinen Blüten."),
             ("Band &amp; Spitze", "Ein Zierband oder eine Spitzenborte rund um die Kerze."),
             ("Material", "Wir beraten euch, welches Wachs zu eurer Kerze passt."),
         ],

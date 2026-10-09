@@ -24,7 +24,7 @@ window.GALERIE = [
     // Taufe
     { datei: "/galerie/bilder/taufkerze-lebensbaum-blau.jpg",         anlass: "taufe",      titel: "Taufkerze mit blauem Lebensbaum und Taube", kurz: "Lebensbaum in Blau", auswahl: true },
     { datei: "/galerie/bilder/taufkerze-blaue-rosen-sonne-fische.jpg", anlass: "taufe",     titel: "Taufkerze mit blauen Rosen, Sonne, Lebensbaum und Fischen", kurz: "Blaue Rosen & Sonne" },
-    { datei: "/galerie/bilder/taufkerze-bordeaux-kreuz-taube.jpg",    anlass: "taufe",      titel: "Taufkerze mit bordeauxrotem Kreuz, Taube und Röschen", kurz: "Bordeaux mit Taube" },
+    { datei: "/galerie/bilder/taufkerze-rosa-herz-schmetterling.jpg",  anlass: "taufe",      titel: "Taufkerze in Rosa mit Kreuz, Herz, Schmetterling und Blüten", kurz: "Rosa Herz & Schmetterling" },
     { datei: "/galerie/bilder/taufkerzen-blau-kreuz-lebensbaum.jpg",  anlass: "taufe",      titel: "Taufkerzen in Blau mit Kreuz, Lebensbaum und Fisch", kurz: "Kreuz & Lebensbaum" },
     { datei: "/galerie/bilder/taufkerzen-rosa-maedchen.jpg",          anlass: "taufe",      titel: "Taufkerzen in Rosa mit Kreuz, Herz und Engel", kurz: "Rosa mit Herz & Engel" },
 
